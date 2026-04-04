@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Cinema Hardware | Dubai</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; color: #e0e0e0; max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* Navigation / Header */
+        .nav { text-align: center; margin-bottom: 20px; }
+        .nav a { color: #aaaaaa; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; transition: color 0.3s; }
+        .nav a:hover { color: #ffd700; }
+        h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.5em; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; }
+        .header-subtext { text-align: center; font-style: italic; color: #aaaaaa; margin-bottom: 40px; font-size: 1.1em; }
+        
+        /* Hardware Cards */
+        .card { background: #1c1f2b; border-radius: 15px; margin-bottom: 30px; display: flex; overflow: hidden; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.8); min-height: 250px; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.01); border-color: #ffd700; }
+        
+        /* CSS Gear Image */
+        .hardware-img { 
+            width: 300px; flex-shrink: 0; 
+            background: linear-gradient(135deg, #181b26 0%, #0d0f16 100%);
+            border-right: 1px solid #2a2d3e;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 20px; text-align: center; position: relative;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.6);
+        }
+        .cat-tag { color: #ffd700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; font-weight: bold; opacity: 0.9; }
+        .hw-model { font-size: 1.5em; font-weight: 800; color: #ffffff; letter-spacing: 1px; line-height: 1.3; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+        
+        /* Content area */
+        .content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+        .badge { background: #2c3e50; border: 1px solid #e67e22; color: #e67e22; padding: 6px 14px; border-radius: 20px; font-size: 0.85em; font-weight: bold; text-transform: uppercase; display: inline-block; margin-bottom: 15px; align-self: flex-start; }
+        .desc { color: #cccccc; line-height: 1.7; margin: 0 0 20px 0; font-size: 1.15em; }
+        h2 { color: #ffffff; margin: 0 0 8px 0; font-size: 2em; }
+        
+        /* Affiliate Button */
+        .btn { display: inline-block; background: linear-gradient(90deg, #d35400, #e67e22); color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; align-self: flex-start; transition: opacity 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+        .btn:hover { opacity: 0.9; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); }
+        
+        @media (max-width: 768px) { .card { flex-direction: column; } .hardware-img { width: 100%; height: 200px; border-right: none; border-bottom: 1px solid #2a2d3e; } }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="index.html">← Back to Movie Library</a>
+    </div>
+
+    <h1>⚙️ Reference Hardware Guide</h1>
+    <p class="header-subtext">The exact equipment required to power an elite 11.1.4 Dolby Atmos theater in Dubai.</p>
+    
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">AV Receiver</div>
+            <div class="hw-model">Denon AVC-A1H</div>
+        </div>
+        <div class="content">
+            <span class="badge">15.4 Channel | 8K | 210W</span>
+            <h2>Denon AVC-A1H</h2>
+            <p class="desc">The ultimate one-box solution for a full 11.1.4 setup without needing external amps. Massive toroidal transformer.</p>
+            <a href="https://www.amazon.ae/s?k=Denon%20AVC-A1H%20AV%20Receiver" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">AV Receiver</div>
+            <div class="hw-model">Marantz Cinema 30</div>
+        </div>
+        <div class="content">
+            <span class="badge">11.4 Channel | Reference Audio</span>
+            <h2>Marantz Cinema 30</h2>
+            <p class="desc">Audiophile-grade processing with incredibly warm, detailed sound. Perfect for driving high-end Focal or Klipsch towers.</p>
+            <a href="https://www.amazon.ae/s?k=Marantz%20Cinema%2030%20AV%20Receiver" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Processor</div>
+            <div class="hw-model">Anthem AVM 90</div>
+        </div>
+        <div class="content">
+            <span class="badge">15.4 Channel | ARC Genesis</span>
+            <h2>Anthem AVM 90</h2>
+            <p class="desc">World-class room correction. Pair this processor with dedicated power amplifiers for true cinema-grade performance.</p>
+            <a href="https://www.amazon.ae/s?k=Anthem%20AVM%2090%20Processor" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">PRO Soundbar</div>
+            <div class="hw-model">Sennheiser AMBEO Max</div>
+        </div>
+        <div class="content">
+            <span class="badge">5.1.4 Virtualized | 500W</span>
+            <h2>Sennheiser AMBEO Max</h2>
+            <p class="desc">The undisputed king of standalone soundbars. Incredible room calibration creates a massive Atmos bubble without rear speakers.</p>
+            <a href="https://www.amazon.ae/s?k=Sennheiser%20AMBEO%20Max%20PRO%20Soundbar" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">PRO Soundbar</div>
+            <div class="hw-model">Samsung HW-Q990D</div>
+        </div>
+        <div class="content">
+            <span class="badge">11.1.4 Channel | Wireless Atmos</span>
+            <h2>Samsung HW-Q990D</h2>
+            <p class="desc">The best out-of-the-box 11.1.4 system on the market. Includes dedicated wireless rear speakers with up-firing drivers.</p>
+            <a href="https://www.amazon.ae/s?k=Samsung%20HW-Q990D%20PRO%20Soundbar" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">PRO Soundbar</div>
+            <div class="hw-model">Nakamichi Dragon</div>
+        </div>
+        <div class="content">
+            <span class="badge">11.4.6 Channel | Quad Subs</span>
+            <h2>Nakamichi Dragon</h2>
+            <p class="desc">A massive, heavy-duty soundbar system featuring dual subwoofers and absolute brute-force audio dynamics.</p>
+            <a href="https://www.amazon.ae/s?k=Nakamichi%20Dragon%20PRO%20Soundbar" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Floorstanding Speaker</div>
+            <div class="hw-model">Focal Aria Evo X N°3</div>
+        </div>
+        <div class="content">
+            <span class="badge">3-Way Bass Reflex | Flax Cone</span>
+            <h2>Focal Aria Evo X N°3</h2>
+            <p class="desc">Handcrafted in France. Delivers pristine vocal clarity and stunning high-frequencies for reference home theater fronts.</p>
+            <a href="https://www.amazon.ae/s?k=Focal%20Aria%20Evo%20X%20N%C2%B03%20Floorstanding%20Speaker" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Floorstanding Speaker</div>
+            <div class="hw-model">Klipsch RP-8060FA II</div>
+        </div>
+        <div class="content">
+            <span class="badge">Built-in Atmos | Tractrix Horn</span>
+            <h2>Klipsch RP-8060FA II</h2>
+            <p class="desc">Features built-in up-firing Atmos drivers. High-efficiency horn tweeters provide massive cinema-like dynamic impact.</p>
+            <a href="https://www.amazon.ae/s?k=Klipsch%20RP-8060FA%20II%20Floorstanding%20Speaker" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Subwoofer</div>
+            <div class="hw-model">SVS PB16-Ultra</div>
+        </div>
+        <div class="content">
+            <span class="badge">16-inch Driver | 1500W RMS</span>
+            <h2>SVS PB16-Ultra</h2>
+            <p class="desc">The ultimate foundation for LFE. Will effortlessly pressurize a large Dubai villa theater room with chest-thumping bass.</p>
+            <a href="https://www.amazon.ae/s?k=SVS%20PB16-Ultra%20Subwoofer" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Subwoofer</div>
+            <div class="hw-model">Klipsch RP-1600SW</div>
+        </div>
+        <div class="content">
+            <span class="badge">16-inch Spun Copper | 800W</span>
+            <h2>Klipsch RP-1600SW</h2>
+            <p class="desc">Aggressive, tight, and incredibly powerful. The perfect match for a full Klipsch Reference Premiere setup.</p>
+            <a href="https://www.amazon.ae/s?k=Klipsch%20RP-1600SW%20Subwoofer" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">OLED Display</div>
+            <div class="hw-model">LG OLED G4 Series (83-inch)</div>
+        </div>
+        <div class="content">
+            <span class="badge">Micro Lens Array | 144Hz</span>
+            <h2>LG OLED G4 Series (83-inch)</h2>
+            <p class="desc">The brightest OLED available. Infinite contrast makes this the absolute best display for watching dark 4K UHD movies.</p>
+            <a href="https://www.amazon.ae/s?k=LG%20OLED%20G4%20Series%20%2883-inch%29%20OLED%20Display" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Mini-LED Display</div>
+            <div class="hw-model">Sony BRAVIA 9 (85-inch)</div>
+        </div>
+        <div class="content">
+            <span class="badge">XR Backlight Master | 4K HDR</span>
+            <h2>Sony BRAVIA 9 (85-inch)</h2>
+            <p class="desc">Unrivaled peak brightness for sunlit living rooms, combined with Sony's industry-leading XR image processing.</p>
+            <a href="https://www.amazon.ae/s?k=Sony%20BRAVIA%209%20%2885-inch%29%20Mini-LED%20Display" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="hardware-img">
+            <div class="cat-tag">Laser Projector</div>
+            <div class="hw-model">JVC DLA-NZ800</div>
+        </div>
+        <div class="content">
+            <span class="badge">8K e-shiftX | Laser Phosphor</span>
+            <h2>JVC DLA-NZ800</h2>
+            <p class="desc">For dedicated dark theater rooms. Offers the deepest black levels of any projector on the market for true cinematic scale.</p>
+            <a href="https://www.amazon.ae/s?k=JVC%20DLA-NZ800%20Laser%20Projector" target="_blank" class="btn">Check Price on Amazon.ae</a>
+        </div>
+    </div>
+    
+</body>
+</html>
