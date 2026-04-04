@@ -11,6 +11,10 @@
         .nav a:hover { color: #ffd700; }
         h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.5em; color: #ffffff; text-transform: uppercase; letter-spacing: 2px; }
         .header-subtext { text-align: center; font-style: italic; color: #aaaaaa; margin-bottom: 40px; font-size: 1.1em; }
+        
+        /* New Section Headers */
+        .section-title { background: linear-gradient(90deg, #1c1f2b, #0b0d17); color: #ffd700; padding: 15px 20px; border-left: 5px solid #ffd700; font-size: 2em; margin: 50px 0 25px 0; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        
         .card { background: #1c1f2b; border-radius: 15px; margin-bottom: 30px; display: flex; overflow: hidden; border: 1px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.8); min-height: 250px; transition: transform 0.2s; }
         .card:hover { transform: scale(1.01); border-color: #ffd700; box-shadow: 0 10px 35px rgba(255, 215, 0, 0.15); }
         .hardware-img { width: 320px; flex-shrink: 0; background: linear-gradient(135deg, #181b26 0%, #0d0f16 100%); border-right: 1px solid #2a2d3e; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; text-align: center; position: relative; box-shadow: inset 0 0 40px rgba(0,0,0,0.6); }
@@ -23,7 +27,7 @@
         .badge-premium { background: #15202b; border-color: #3498db; color: #3498db; }
         .badge-value { background: #152b1e; border-color: #2ecc71; color: #2ecc71; }
         .desc { color: #cccccc; line-height: 1.7; margin: 0 0 20px 0; font-size: 1.15em; }
-        h2 { color: #ffffff; margin: 0 0 8px 0; font-size: 2em; }
+        h2.item-title { color: #ffffff; margin: 0 0 8px 0; font-size: 2em; border: none; padding: 0; background: none; box-shadow: none; text-transform: none; letter-spacing: normal; }
         .btn { display: inline-block; background: linear-gradient(90deg, #d35400, #e67e22); color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; align-self: flex-start; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .btn:hover { opacity: 0.9; box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4); transform: translateY(-2px); }
         @media (max-width: 768px) { .card { flex-direction: column; } .hardware-img { width: 100%; height: 220px; border-right: none; border-bottom: 1px solid #2a2d3e; } }
@@ -36,257 +40,312 @@
     <h1>⚙️ Reference Hardware Guide</h1>
     <p class="header-subtext">Expertly curated equipment for every tier of Dolby Atmos home theater.</p>
     
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Processor</div>
-            <div class="hw-model">Trinnov Altitude16</div>
+    <h2 class="section-title">Media & Blu-Ray Players</h2>
+
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Media Player</div>
+                <div class="hw-model">Apple TV 4K (3rd Gen)</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">PREMIUM | Streaming</span>
+                <h2 class="item-title">Apple TV 4K (3rd Gen)</h2>
+                <p class="desc">The cleanest interface and best app support for streaming Netflix and Apple TV+ in Dolby Vision and Atmos.</p>
+                <a href="https://www.amazon.ae/s?k=Apple%20TV%204K%20%283rd%20Gen%29%20Media%20Player&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-ultra">ULTRA-PREMIUM | 16-Channel</span>
-            <h2>Trinnov Altitude16</h2>
-            <p class="desc">The absolute pinnacle of home cinema. Features legendary 3D spatial acoustic optimization used in commercial dubbing stages.</p>
-            <a href="https://www.amazon.ae/s?k=Trinnov%20Altitude16%20Processor&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Media Player</div>
+                <div class="hw-model">Nvidia Shield TV Pro</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-flagship">FLAGSHIP | Lossless Audio</span>
+                <h2 class="item-title">Nvidia Shield TV Pro</h2>
+                <p class="desc">The ultimate device for playing uncompressed, lossless Dolby Atmos files from a local server or Plex.</p>
+                <a href="https://www.amazon.ae/s?k=Nvidia%20Shield%20TV%20Pro%20Media%20Player&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">AV Receiver</div>
-            <div class="hw-model">Denon AVC-A1H</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Blu-Ray Player</div>
+                <div class="hw-model">Panasonic DP-UB820</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | 4K HDR</span>
+                <h2 class="item-title">Panasonic DP-UB820</h2>
+                <p class="desc">The absolute benchmark for 4K Blu-ray players. Features the HCX processor for flawless HDR tone mapping on any TV.</p>
+                <a href="https://www.amazon.ae/s?k=Panasonic%20DP-UB820%20Blu-Ray%20Player&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-flagship">FLAGSHIP | 15.4 Channel</span>
-            <h2>Denon AVC-A1H</h2>
-            <p class="desc">The ultimate one-box solution for a full 11.1.4 setup without needing external amps. Massive power reserves.</p>
-            <a href="https://www.amazon.ae/s?k=Denon%20AVC-A1H%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Media Player</div>
+                <div class="hw-model">Roku Ultra 4K</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | Streaming</span>
+                <h2 class="item-title">Roku Ultra 4K</h2>
+                <p class="desc">A highly accessible, fast streaming device that supports Dolby Vision and Atmos with a great remote.</p>
+                <a href="https://www.amazon.ae/s?k=Roku%20Ultra%204K%20Media%20Player&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
+        </div><h2 class="section-title">AV Receivers & Processors</h2>
+
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Processor</div>
+                <div class="hw-model">Trinnov Altitude16</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-ultra">ULTRA-PREMIUM | 16-Channel</span>
+                <h2 class="item-title">Trinnov Altitude16</h2>
+                <p class="desc">The absolute pinnacle of home cinema. Features legendary 3D spatial acoustic optimization used in commercial dubbing stages.</p>
+                <a href="https://www.amazon.ae/s?k=Trinnov%20Altitude16%20Processor&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">AV Receiver</div>
-            <div class="hw-model">Marantz Cinema 50</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">AV Receiver</div>
+                <div class="hw-model">Denon AVC-A1H</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-flagship">FLAGSHIP | 15.4 Channel</span>
+                <h2 class="item-title">Denon AVC-A1H</h2>
+                <p class="desc">The ultimate one-box solution for a full 11.1.4 setup without needing external amps. Massive power reserves.</p>
+                <a href="https://www.amazon.ae/s?k=Denon%20AVC-A1H%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-premium">PREMIUM | 9.4 Channel</span>
-            <h2>Marantz Cinema 50</h2>
-            <p class="desc">Audiophile-grade processing with warm, detailed sound. Expandable to 11.4 channels with a simple stereo amplifier.</p>
-            <a href="https://www.amazon.ae/s?k=Marantz%20Cinema%2050%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">AV Receiver</div>
+                <div class="hw-model">Marantz Cinema 50</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">PREMIUM | 9.4 Channel</span>
+                <h2 class="item-title">Marantz Cinema 50</h2>
+                <p class="desc">Audiophile-grade processing with warm, detailed sound. Expandable to 11.4 channels with a simple stereo amplifier.</p>
+                <a href="https://www.amazon.ae/s?k=Marantz%20Cinema%2050%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">AV Receiver</div>
-            <div class="hw-model">Denon AVC-X3800H</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">AV Receiver</div>
+                <div class="hw-model">Denon AVC-X3800H</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | 9.4 Channel</span>
+                <h2 class="item-title">Denon AVC-X3800H</h2>
+                <p class="desc">The undisputed king of value. Processes a full 11.4 Atmos signal, featuring Dirac Live room correction at an unbeatable price.</p>
+                <a href="https://www.amazon.ae/s?k=Denon%20AVC-X3800H%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
+        </div><h2 class="section-title">PRO Soundbars</h2>
+
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">PRO Soundbar</div>
+                <div class="hw-model">Samsung HW-Q990D</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-flagship">FLAGSHIP | 11.1.4 Channel</span>
+                <h2 class="item-title">Samsung HW-Q990D</h2>
+                <p class="desc">The best out-of-the-box 11.1.4 system on the market. True wireless rear speakers with up-firing drivers and massive bass.</p>
+                <a href="https://www.amazon.ae/s?k=Samsung%20HW-Q990D%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | 9.4 Channel</span>
-            <h2>Denon AVC-X3800H</h2>
-            <p class="desc">The undisputed king of value. Processes a full 11.4 Atmos signal, featuring Dirac Live room correction at an unbeatable price.</p>
-            <a href="https://www.amazon.ae/s?k=Denon%20AVC-X3800H%20AV%20Receiver&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">PRO Soundbar</div>
+                <div class="hw-model">Samsung HW-Q930D</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | 9.1.4 Channel</span>
+                <h2 class="item-title">Samsung HW-Q930D</h2>
+                <p class="desc">Delivers 90% of the flagship Q990D's performance at a significantly lower price. The ultimate high-value apartment solution.</p>
+                <a href="https://www.amazon.ae/s?k=Samsung%20HW-Q930D%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">PRO Soundbar</div>
-            <div class="hw-model">Samsung HW-Q990D</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">PRO Soundbar</div>
+                <div class="hw-model">Sonos Ultimate Immersive Set</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">PREMIUM | 7.1.4 Virtualized</span>
+                <h2 class="item-title">Sonos Ultimate Immersive Set</h2>
+                <p class="desc">Combines the Sonos Arc, Sub (Gen 3), and Era 300 rears. Incredibly sleek design with best-in-class music streaming integration.</p>
+                <a href="https://www.amazon.ae/s?k=Sonos%20Ultimate%20Immersive%20Set%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-flagship">FLAGSHIP | 11.1.4 Channel</span>
-            <h2>Samsung HW-Q990D</h2>
-            <p class="desc">The best out-of-the-box 11.1.4 system on the market. True wireless rear speakers with up-firing drivers and massive bass.</p>
-            <a href="https://www.amazon.ae/s?k=Samsung%20HW-Q990D%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">PRO Soundbar</div>
+                <div class="hw-model">Sennheiser AMBEO Max</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">AUDIOPHILE | 5.1.4 Virtualized</span>
+                <h2 class="item-title">Sennheiser AMBEO Max</h2>
+                <p class="desc">The undisputed king of single-bar solutions. Incredible room calibration creates a massive Atmos bubble without any rear speakers.</p>
+                <a href="https://www.amazon.ae/s?k=Sennheiser%20AMBEO%20Max%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
+        </div><h2 class="section-title">Displays & Projectors</h2>
+
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Laser Projector</div>
+                <div class="hw-model">JVC DLA-NZ800</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-ultra">ULTRA-PREMIUM | 8K e-shiftX</span>
+                <h2 class="item-title">JVC DLA-NZ800</h2>
+                <p class="desc">For dedicated dark theater rooms. Offers the absolute deepest black levels of any projector on the market for true cinematic scale.</p>
+                <a href="https://www.amazon.ae/s?k=JVC%20DLA-NZ800%20Laser%20Projector&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">PRO Soundbar</div>
-            <div class="hw-model">Samsung HW-Q930D</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">OLED Display</div>
+                <div class="hw-model">LG OLED G4 Series</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-flagship">FLAGSHIP | Micro Lens Array</span>
+                <h2 class="item-title">LG OLED G4 Series</h2>
+                <p class="desc">The brightest OLED available. Infinite contrast makes this the absolute best display for watching dark 4K UHD movies.</p>
+                <a href="https://www.amazon.ae/s?k=LG%20OLED%20G4%20Series%20OLED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | 9.1.4 Channel</span>
-            <h2>Samsung HW-Q930D</h2>
-            <p class="desc">Delivers 90% of the flagship Q990D's performance at a significantly lower price. The ultimate high-value apartment solution.</p>
-            <a href="https://www.amazon.ae/s?k=Samsung%20HW-Q930D%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">OLED Display</div>
+                <div class="hw-model">LG OLED C4 Series</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | 4K 144Hz</span>
+                <h2 class="item-title">LG OLED C4 Series</h2>
+                <p class="desc">The most popular OLED in the world for a reason. Offers 95% of flagship performance at a much more accessible price point.</p>
+                <a href="https://www.amazon.ae/s?k=LG%20OLED%20C4%20Series%20OLED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">PRO Soundbar</div>
-            <div class="hw-model">Sonos Ultimate Immersive Set</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Mini-LED Display</div>
+                <div class="hw-model">Hisense U8N Series</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | High Brightness</span>
+                <h2 class="item-title">Hisense U8N Series</h2>
+                <p class="desc">The ultimate living-room TV. Blindingly bright Mini-LED backlighting cuts through daytime glare with spectacular HDR punch.</p>
+                <a href="https://www.amazon.ae/s?k=Hisense%20U8N%20Series%20Mini-LED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
+        </div><h2 class="section-title">Speakers & Subwoofers</h2>
+
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Floorstanding</div>
+                <div class="hw-model">Bowers & Wilkins 802 D4</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-ultra">ULTRA-PREMIUM | Diamond Dome</span>
+                <h2 class="item-title">Bowers & Wilkins 802 D4</h2>
+                <p class="desc">A visual and acoustic masterpiece. Features the legendary diamond tweeter for the most revealing high-frequencies imaginable.</p>
+                <a href="https://www.amazon.ae/s?k=Bowers%20%26%20Wilkins%20802%20D4%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-premium">PREMIUM | 7.1.4 Virtualized</span>
-            <h2>Sonos Ultimate Immersive Set</h2>
-            <p class="desc">Combines the Sonos Arc, Sub (Gen 3), and Era 300 rears. Incredibly sleek design with best-in-class music streaming integration.</p>
-            <a href="https://www.amazon.ae/s?k=Sonos%20Ultimate%20Immersive%20Set%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Floorstanding</div>
+                <div class="hw-model">KEF Reference 5 Meta</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-ultra">ULTRA-PREMIUM | Uni-Q Array</span>
+                <h2 class="item-title">KEF Reference 5 Meta</h2>
+                <p class="desc">Flawless point-source audio. The Metamaterial technology eliminates 99% of unwanted high-frequency distortion.</p>
+                <a href="https://www.amazon.ae/s?k=KEF%20Reference%205%20Meta%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">PRO Soundbar</div>
-            <div class="hw-model">Sennheiser AMBEO Max</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Floorstanding</div>
+                <div class="hw-model">Klipsch RP-8060FA II</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">PREMIUM | Built-in Atmos</span>
+                <h2 class="item-title">Klipsch RP-8060FA II</h2>
+                <p class="desc">Features built-in up-firing Atmos drivers. High-efficiency horn tweeters provide massive cinema-like dynamic impact.</p>
+                <a href="https://www.amazon.ae/s?k=Klipsch%20RP-8060FA%20II%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-premium">AUDIOPHILE | 5.1.4 Virtualized</span>
-            <h2>Sennheiser AMBEO Max</h2>
-            <p class="desc">The undisputed king of single-bar solutions. Incredible room calibration creates a massive Atmos bubble without any rear speakers.</p>
-            <a href="https://www.amazon.ae/s?k=Sennheiser%20AMBEO%20Max%20PRO%20Soundbar&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Floorstanding</div>
+                <div class="hw-model">Klipsch R-605FA</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | Built-in Atmos</span>
+                <h2 class="item-title">Klipsch R-605FA</h2>
+                <p class="desc">The perfect entry point into dedicated Atmos theater sound. Highly efficient, incredibly loud, and very budget-friendly.</p>
+                <a href="https://www.amazon.ae/s?k=Klipsch%20R-605FA%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Floorstanding</div>
-            <div class="hw-model">Bowers & Wilkins 802 D4</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Bookshelf</div>
+                <div class="hw-model">SVS Prime Elevation</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">VERSATILE | Height Channels</span>
+                <h2 class="item-title">SVS Prime Elevation</h2>
+                <p class="desc">The ultimate solution for Atmos height effects if you cannot drill into your ceiling. Easily mounts high on any wall.</p>
+                <a href="https://www.amazon.ae/s?k=SVS%20Prime%20Elevation%20Bookshelf&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-ultra">ULTRA-PREMIUM | Diamond Dome</span>
-            <h2>Bowers & Wilkins 802 D4</h2>
-            <p class="desc">A visual and acoustic masterpiece. Features the legendary diamond tweeter for the most revealing high-frequencies imaginable.</p>
-            <a href="https://www.amazon.ae/s?k=Bowers%20%26%20Wilkins%20802%20D4%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Subwoofer</div>
+                <div class="hw-model">REL Acoustics No.32</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-ultra">ULTRA-PREMIUM | 1000W</span>
+                <h2 class="item-title">REL Acoustics No.32</h2>
+                <p class="desc">Pure speed and musicality. Designed to be stacked in line-arrays to perfectly pressurize massive luxury theater rooms.</p>
+                <a href="https://www.amazon.ae/s?k=REL%20Acoustics%20No.32%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Floorstanding</div>
-            <div class="hw-model">KEF Reference 5 Meta</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Subwoofer</div>
+                <div class="hw-model">SVS PB16-Ultra</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-flagship">FLAGSHIP | 16-inch Driver</span>
+                <h2 class="item-title">SVS PB16-Ultra</h2>
+                <p class="desc">The ultimate foundation for LFE. Will effortlessly shake the foundations of a large villa with chest-thumping bass.</p>
+                <a href="https://www.amazon.ae/s?k=SVS%20PB16-Ultra%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-ultra">ULTRA-PREMIUM | Uni-Q Array</span>
-            <h2>KEF Reference 5 Meta</h2>
-            <p class="desc">Flawless point-source audio. The Metamaterial technology eliminates 99% of unwanted high-frequency distortion.</p>
-            <a href="https://www.amazon.ae/s?k=KEF%20Reference%205%20Meta%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Subwoofer</div>
+                <div class="hw-model">Klipsch RP-1400SW</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-premium">PREMIUM | 14-inch Driver</span>
+                <h2 class="item-title">Klipsch RP-1400SW</h2>
+                <p class="desc">Aggressive, tight, and incredibly powerful. A massive upgrade over standard subwoofers for serious action movie fans.</p>
+                <a href="https://www.amazon.ae/s?k=Klipsch%20RP-1400SW%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Floorstanding</div>
-            <div class="hw-model">Klipsch RP-8060FA II</div>
+        <div class="card">
+            <div class="hardware-img">
+                <div class="cat-tag">Subwoofer</div>
+                <div class="hw-model">SVS PB-1000 Pro</div>
+            </div>
+            <div class="content">
+                <span class="badge badge-value">BEST VALUE | 12-inch Driver</span>
+                <h2 class="item-title">SVS PB-1000 Pro</h2>
+                <p class="desc">The industry benchmark for value subwoofers. Hits incredibly low frequencies via its smartphone control app.</p>
+                <a href="https://www.amazon.ae/s?k=SVS%20PB-1000%20Pro%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
+            </div>
         </div>
-        <div class="content">
-            <span class="badge badge-premium">PREMIUM | Built-in Atmos</span>
-            <h2>Klipsch RP-8060FA II</h2>
-            <p class="desc">Features built-in up-firing Atmos drivers. High-efficiency horn tweeters provide massive cinema-like dynamic impact.</p>
-            <a href="https://www.amazon.ae/s?k=Klipsch%20RP-8060FA%20II%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Floorstanding</div>
-            <div class="hw-model">Klipsch R-605FA</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | Built-in Atmos</span>
-            <h2>Klipsch R-605FA</h2>
-            <p class="desc">The perfect entry point into dedicated Atmos theater sound. Highly efficient, incredibly loud, and very budget-friendly.</p>
-            <a href="https://www.amazon.ae/s?k=Klipsch%20R-605FA%20Floorstanding&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Bookshelf</div>
-            <div class="hw-model">SVS Prime Elevation</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-value">VERSATILE | Height Channels</span>
-            <h2>SVS Prime Elevation</h2>
-            <p class="desc">The ultimate solution for Atmos height effects if you cannot drill into your ceiling. Easily mounts high on any wall.</p>
-            <a href="https://www.amazon.ae/s?k=SVS%20Prime%20Elevation%20Bookshelf&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Subwoofer</div>
-            <div class="hw-model">REL Acoustics No.32</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-ultra">ULTRA-PREMIUM | 1000W</span>
-            <h2>REL Acoustics No.32</h2>
-            <p class="desc">Pure speed and musicality. Designed to be stacked in line-arrays to perfectly pressurize massive luxury theater rooms.</p>
-            <a href="https://www.amazon.ae/s?k=REL%20Acoustics%20No.32%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Subwoofer</div>
-            <div class="hw-model">SVS PB16-Ultra</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-flagship">FLAGSHIP | 16-inch Driver</span>
-            <h2>SVS PB16-Ultra</h2>
-            <p class="desc">The ultimate foundation for LFE. Will effortlessly shake the foundations of a large villa with chest-thumping bass.</p>
-            <a href="https://www.amazon.ae/s?k=SVS%20PB16-Ultra%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Subwoofer</div>
-            <div class="hw-model">Klipsch RP-1400SW</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-premium">PREMIUM | 14-inch Driver</span>
-            <h2>Klipsch RP-1400SW</h2>
-            <p class="desc">Aggressive, tight, and incredibly powerful. A massive upgrade over standard subwoofers for serious action movie fans.</p>
-            <a href="https://www.amazon.ae/s?k=Klipsch%20RP-1400SW%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Subwoofer</div>
-            <div class="hw-model">SVS PB-1000 Pro</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | 12-inch Driver</span>
-            <h2>SVS PB-1000 Pro</h2>
-            <p class="desc">The industry benchmark for value subwoofers. Hits incredibly low frequencies (below 20Hz) via its smartphone control app.</p>
-            <a href="https://www.amazon.ae/s?k=SVS%20PB-1000%20Pro%20Subwoofer&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Laser Projector</div>
-            <div class="hw-model">JVC DLA-NZ800</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-ultra">ULTRA-PREMIUM | 8K e-shiftX</span>
-            <h2>JVC DLA-NZ800</h2>
-            <p class="desc">For dedicated dark theater rooms. Offers the absolute deepest black levels of any projector on the market for true cinematic scale.</p>
-            <a href="https://www.amazon.ae/s?k=JVC%20DLA-NZ800%20Laser%20Projector&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">OLED Display</div>
-            <div class="hw-model">LG OLED G4 Series</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-flagship">FLAGSHIP | Micro Lens Array</span>
-            <h2>LG OLED G4 Series</h2>
-            <p class="desc">The brightest OLED available. Infinite contrast makes this the absolute best display for watching dark 4K UHD movies.</p>
-            <a href="https://www.amazon.ae/s?k=LG%20OLED%20G4%20Series%20OLED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">OLED Display</div>
-            <div class="hw-model">LG OLED C4 Series</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | 4K 144Hz</span>
-            <h2>LG OLED C4 Series</h2>
-            <p class="desc">The most popular OLED in the world for a reason. Offers 95% of flagship performance at a much more accessible price point.</p>
-            <a href="https://www.amazon.ae/s?k=LG%20OLED%20C4%20Series%20OLED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
-    <div class="card">
-        <div class="hardware-img">
-            <div class="cat-tag">Mini-LED Display</div>
-            <div class="hw-model">Hisense U8N Series</div>
-        </div>
-        <div class="content">
-            <span class="badge badge-value">BEST VALUE | High Brightness</span>
-            <h2>Hisense U8N Series</h2>
-            <p class="desc">The ultimate living-room TV. Blindingly bright Mini-LED backlighting cuts through daytime glare with spectacular HDR punch.</p>
-            <a href="https://www.amazon.ae/s?k=Hisense%20U8N%20Series%20Mini-LED%20Display&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Check Price on Amazon.ae</a>
-        </div>
-    </div>
+
 </body>
 </html>
