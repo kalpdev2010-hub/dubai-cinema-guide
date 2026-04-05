@@ -28,12 +28,12 @@
         .cta-box h2 { border: none; margin-top: 0; color: white; font-size: 2em; }
         .btn { display: inline-block; background: #ffffff; color: #d35400; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 900; text-transform: uppercase; }
         
-        /* --- MOBILE OPTIMIZATION --- */
+        /* --- MOBILE OPTIMIZATION (Fixes Portrait Mode) --- */
         @media (max-width: 600px) {
             .nav a { font-size: 0.9em; margin: 0 5px; } 
             h1 { font-size: 1.8em; } 
-            h2 { font-size: 1.5em; margin-top: 30px; }
-            h3 { font-size: 1.2em; }
+            h2 { font-size: 1.25em; margin-top: 30px; } /* Shrunk to fit long titles on one line */
+            h3 { font-size: 1.1em; } /* Shrunk to keep hierarchy below H2 */
             .card { padding: 15px; } 
         }
     </style>
