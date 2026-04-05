@@ -15,8 +15,42 @@
         .nav a { color: #ffd700; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; border: 1px solid #ffd700; padding: 10px 20px; border-radius: 5px; transition: all 0.3s; }
         .nav a:hover { background: #ffd700; color: #0b0d17; }
         h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.2em; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; }
-        .header-subtext { text-align: center; font-style: italic; color: #aaaaaa; margin-bottom: 40px; font-size: 1.1em; }
+        .header-subtext { text-align: center; font-style: italic; color: #aaaaaa; margin-bottom: 30px; font-size: 1.1em; }
         
+        /* SEARCH BAR STYLES */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 16px 25px;
+            font-size: 1.1em;
+            border-radius: 30px;
+            border: 2px solid #2a2d3e;
+            background: #1c1f2b;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        #searchInput:focus {
+            border-color: #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+        }
+        #searchInput::placeholder {
+            color: #777777;
+        }
+        .no-results {
+            text-align: center;
+            color: #aaaaaa;
+            font-size: 1.2em;
+            display: none;
+            grid-column: 1 / -1;
+            padding: 30px;
+        }
+
         /* THE COMPACT GRID */
         .movie-grid {
             display: grid;
@@ -57,6 +91,7 @@
             .movie-grid { grid-template-columns: 1fr; gap: 12px; }
             .card { padding: 15px; }
             h2 { font-size: 1.2em; margin-bottom: 15px; }
+            #searchInput { font-size: 1em; padding: 14px 20px; }
         }
     </style>
 </head>
@@ -67,7 +102,11 @@
     <h1>🏆 The Master Reference Library</h1>
     <p class="header-subtext">My personal, expertly curated collection for testing high-end home theater systems in Dubai, UAE.</p>
     
-    <div class="movie-grid">
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="filterMovies()" placeholder="🔍 Search for a movie (e.g., Dune, Matrix)...">
+    </div>
+
+    <div class="movie-grid" id="movieGrid">
         
     <div class="card">
         <div>
@@ -1196,6 +1235,27 @@
         </div>
         <a href="https://www.amazon.ae/s?k=Zack%20Snyder%27s%20Justice%20League%20%282021%29%204K%20Blu-ray&tag=dubaicinema-21" target="_blank" rel="nofollow" class="btn">Find on Amazon.ae</a>
     </div>
+        <div class="no-results" id="noResults">No movies found matching your search.</div>
     </div>
+
+    <script>
+        function filterMovies() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('card');
+            let hasResults = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "flex";
+                    hasResults = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+            
+            document.getElementById('noResults').style.display = hasResults || input === "" ? "none" : "block";
+        }
+    </script>
 </body>
 </html>
