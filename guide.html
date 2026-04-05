@@ -30,11 +30,11 @@
         
         /* --- MOBILE OPTIMIZATION (Fixes Portrait Mode) --- */
         @media (max-width: 600px) {
-            .nav a { font-size: 0.9em; margin: 0 5px; } /* Shrinks nav text and spacing to fit one line */
-            h1 { font-size: 1.8em; } /* Shrinks header so "101" doesn't drop down */
+            .nav a { font-size: 0.9em; margin: 0 5px; } 
+            h1 { font-size: 1.8em; } 
             h2 { font-size: 1.5em; margin-top: 30px; }
             h3 { font-size: 1.2em; }
-            .card { padding: 15px; } /* Reduces padding to give mobile screens more space */
+            .card { padding: 15px; } 
         }
     </style>
 </head>
@@ -47,7 +47,26 @@
     <h1>🍿 Home Theater 101</h1>
     <p style="text-align: center; font-size: 1.2em; max-width: 700px; margin: 0 auto;">The "Holy Grail" guide to understanding audio and video formats in plain English.</p>
 
-    <h2>1. The Audio Formats (3D Sound)</h2>
+    <h2>1. The Basics: Soundbars vs. AVRs</h2>
+    <div class="card">
+        <h3>Soundbars</h3>
+        <p>The plug-and-play solution. Perfect for living rooms where running wires isn't an option. Modern flagship soundbars can bounce sound off your ceiling and walls to simulate a full theater experience with almost zero setup.</p>
+        
+        <h3>AV Receivers (AVR) & Dedicated Speakers</h3>
+        <p>The true enthusiast route. An AVR acts as the "brain," sending power and audio to individual speakers placed around the room. It offers unmatched sound separation, power, and the ability to upgrade components individually over time.</p>
+    </div>
+
+    <h2>2. Understanding the Numbers (e.g., 5.1.2)</h2>
+    <div class="card">
+        <p>When looking at audio gear, you will constantly see numbers like <span class="highlight">5.1.2</span> or <span class="highlight">7.1.4</span>. Here is exactly what they mean:</p>
+        <ul>
+            <li><span class="highlight">The First Number (5):</span> The ear-level speakers (Front Left, Center, Front Right, and two Surround speakers behind you).</li>
+            <li><span class="highlight">The Second Number (.1):</span> The Subwoofer. This handles all the deep bass and low-frequency rumble. (.2 means two subwoofers).</li>
+            <li><span class="highlight">The Third Number (.2):</span> The Height channels. These are speakers either mounted in the ceiling or firing upwards to bounce sound off the ceiling. This is where Dolby Atmos gets its "overhead" effects.</li>
+        </ul>
+    </div>
+
+    <h2>3. The Audio Formats (3D Sound)</h2>
     <div class="card">
         <h3>Dolby Atmos</h3>
         <p>The industry leader. Atmos uses "objects" to place sound anywhere in a 3D space, including overhead. Most common in streaming (Netflix, Disney+).</p>
@@ -59,16 +78,16 @@
         <p>A specialized format that uses three vertical layers of sound. It is highly prized by audiophiles for music and "natural" sound immersion.</p>
     </div>
 
-    <h2>2. Resolution & The "Magic" of HDR</h2>
+    <h2>4. Resolution & The "Magic" of HDR</h2>
     <div class="card">
         <h3>4K (Ultra HD)</h3>
-        <p>4K is just the number of pixels (sharper image). It is 4x the resolution of standard 1080p HD.</p>
+        <p>4K is simply the number of pixels on the screen (resulting in a sharper image). It has 4x the resolution of standard 1080p HD.</p>
         
         <h3>HDR10 & Dolby Vision</h3>
-        <p><span class="highlight">HDR10</span> is the basic standard for better brightness. <span class="highlight">Dolby Vision</span> is the premium version that adjusts the picture frame-by-frame, ensuring you never lose detail in dark shadows or bright highlights.</p>
+        <p><span class="highlight">HDR10</span> is the basic standard for better brightness and color. <span class="highlight">Dolby Vision</span> is the premium version that adjusts the picture frame-by-frame, ensuring you never lose detail in dark shadows or blinding highlights.</p>
         
         <h3>HLG (Hybrid Log Gamma)</h3>
-        <p>Used primarily for live broadcasts like 4K sports. If you watch football or F1 in 4K, you are likely using HLG.</p>
+        <p>Used primarily for live broadcasts like 4K sports. If you watch football or F1 in 4K, you are likely experiencing HLG.</p>
     </div>
 
     <div class="cta-box">
