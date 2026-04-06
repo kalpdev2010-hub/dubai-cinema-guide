@@ -13,9 +13,27 @@
     </script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; color: #e0e0e0; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        .nav { text-align: center; margin-bottom: 30px; }
-        .nav a { color: #aaaaaa; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 1.1em; transition: color 0.3s; }
-        .nav a:hover { color: #ffd700; }
+        
+        /* --- NEW MODERN PILL NAVIGATION --- */
+        .nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .nav-pill { 
+            background: #ffd700; 
+            color: #0b0d17; 
+            text-decoration: none; 
+            padding: 12px 28px; 
+            border-radius: 50px; 
+            font-weight: 900; 
+            font-size: 1.05em; 
+            text-transform: uppercase; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.15); 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        }
+        .nav-pill:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3); background: #ffea00; }
+        /* ---------------------------------- */
+
         h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.5em; color: #ffffff; text-transform: uppercase; margin-bottom: 40px; }
         h2 { color: #ffd700; font-size: 1.8em; margin-top: 50px; border-bottom: 1px solid #333; padding-bottom: 10px; text-transform: uppercase; }
         h3 { color: #e67e22; font-size: 1.3em; margin-top: 30px; margin-bottom: 10px; }
@@ -30,7 +48,10 @@
         
         /* --- MOBILE OPTIMIZATION (Fixes Portrait Mode) --- */
         @media (max-width: 600px) {
-            .nav a { font-size: 0.9em; margin: 0 5px; } 
+            /* Stacks the pills neatly on narrow mobile screens */
+            .nav { flex-direction: column; gap: 10px; padding: 0 10px; }
+            .nav-pill { width: 100%; box-sizing: border-box; justify-content: center; font-size: 0.95em; }
+            
             h1 { font-size: 1.8em; } 
             h2 { font-size: 1.25em; margin-top: 30px; } /* Fits long yellow titles perfectly on one line */
             h3 { font-size: 1.1em; } 
@@ -40,8 +61,8 @@
 </head>
 <body>
     <div class="nav">
-        <a href="index.html">Movie Library</a> | 
-        <a href="hardware.html">Reference Hardware Guide</a>
+        <a href="index.html" class="nav-pill">🎬 Movie Library</a>
+        <a href="hardware.html" class="nav-pill">⚙️ Reference Hardware Guide</a>
     </div>
     
     <h1>🍿 Home Theater 101</h1>
