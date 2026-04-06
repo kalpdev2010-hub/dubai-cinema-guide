@@ -13,9 +13,9 @@
         gtag('config', 'G-J1N4QGJN65');
     </script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; color: #e0e0e0; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        /* UPGRADED: Cinematic Radial Gradient Background */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: radial-gradient(circle at top center, #1a1e36 0%, #0b0d17 100%); background-attachment: fixed; color: #e0e0e0; max-width: 1200px; margin: 0 auto; padding: 20px; }
         
-        /* --- NEW MODERN PILL NAVIGATION --- */
         .nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
         .nav-pill { 
             background: #ffd700; 
@@ -33,19 +33,20 @@
             gap: 10px; 
         }
         .nav-pill:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3); background: #ffea00; }
-        /* ---------------------------------- */
 
         h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.2em; color: #ffffff; text-transform: uppercase; }
         
         .filter-container { text-align: center; margin-bottom: 40px; }
-        select { padding: 14px 20px; font-size: 1.1em; font-weight: bold; border-radius: 8px; background: #1c1f2b; color: #ffd700; border: 2px solid #333; outline: none; cursor: pointer; width: 100%; max-width: 400px; transition: border-color 0.3s; }
-        select:focus { border-color: #ffd700; }
+        select { padding: 14px 20px; font-size: 1.1em; font-weight: bold; border-radius: 8px; background: #1c1f2b; color: #ffd700; border: 2px solid #333; outline: none; cursor: pointer; width: 100%; max-width: 400px; transition: border-color 0.3s, box-shadow 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
+        select:focus { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
         
         .section-title { color: #ffffff; padding-bottom: 10px; border-bottom: 1px solid #333; font-size: 1.8em; margin: 30px 0 20px 0; text-transform: uppercase; }
         
         .hardware-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; }
-        .card { background: #1c1f2b; border-radius: 8px; border: 1px solid #2a2d3e; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s; }
-        .card:hover { transform: translateY(-3px); border-color: #ffd700; }
+        
+        /* UPGRADED: Premium Floating Glass Cards */
+        .card { background: #1c1f2b; border-radius: 8px; border: 1px solid #2a2d3e; border-top: 3px solid #ffd700; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 215, 0, 0.03); transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+        .card:hover { transform: translateY(-4px); border-color: #ffd700; box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(255, 215, 0, 0.15); }
         
         .badge { border: 1px solid #e67e22; color: #e67e22; padding: 5px 10px; border-radius: 20px; font-size: 0.75em; font-weight: bold; display: inline-block; margin-bottom: 15px; text-transform: uppercase; align-self: flex-start; }
         .hw-model { font-size: 1.4em; font-weight: 800; color: #ffffff; margin-bottom: 10px; line-height: 1.2; }
@@ -56,11 +57,8 @@
         
         @media (max-width: 600px) { 
             .hardware-grid { grid-template-columns: 1fr; } 
-            
-            /* Stacks the pills neatly on narrow mobile screens */
             .nav { flex-direction: column; gap: 10px; padding: 0 10px; }
             .nav-pill { width: 100%; box-sizing: border-box; justify-content: center; font-size: 0.95em; }
-            
             h1 { font-size: 1.6em; } 
             .section-title { font-size: 1.3em; } 
         }
@@ -721,3 +719,5 @@
     </script>
 </body>
 </html>
+
+}
