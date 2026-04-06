@@ -13,9 +13,9 @@
       gtag('config', 'G-J1N4QGJN65');
     </script>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0b0d17; color: #e0e0e0; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        /* UPGRADED: Cinematic Radial Gradient Background */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: radial-gradient(circle at top center, #1a1e36 0%, #0b0d17 100%); background-attachment: fixed; color: #e0e0e0; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; }
         
-        /* --- NEW MODERN PILL NAVIGATION --- */
         .nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
         .nav-pill { 
             background: #ffd700; 
@@ -33,28 +33,29 @@
             gap: 10px; 
         }
         .nav-pill:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(255, 215, 0, 0.3); background: #ffea00; }
-        /* ---------------------------------- */
 
         h1 { text-align: center; border-bottom: 2px solid #ffd700; padding-bottom: 15px; font-size: 2.5em; color: #ffffff; text-transform: uppercase; margin-bottom: 40px; }
         h2 { color: #ffd700; font-size: 1.8em; margin-top: 50px; border-bottom: 1px solid #333; padding-bottom: 10px; text-transform: uppercase; }
         h3 { color: #e67e22; font-size: 1.3em; margin-top: 30px; margin-bottom: 10px; }
         p { font-size: 1.05em; color: #cccccc; margin-bottom: 20px; }
-        .card { background: #1c1f2b; border-radius: 8px; border: 1px solid #2a2d3e; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); }
+        
+        /* UPGRADED: Premium Floating Glass Cards */
+        .card { background: #1c1f2b; border-radius: 8px; border: 1px solid #2a2d3e; border-top: 3px solid #ffd700; padding: 25px; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 15px rgba(255, 215, 0, 0.03); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 20px rgba(255, 215, 0, 0.1); }
+        
         .highlight { color: #ffffff; font-weight: bold; }
         ul { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 10px; font-size: 1.05em; color: #cccccc; }
-        .cta-box { background: linear-gradient(135deg, #d35400, #e67e22); padding: 40px 20px; border-radius: 8px; text-align: center; margin-top: 60px; }
+        .cta-box { background: linear-gradient(135deg, #d35400, #e67e22); padding: 40px 20px; border-radius: 8px; text-align: center; margin-top: 60px; box-shadow: 0 10px 30px rgba(211, 84, 0, 0.3); }
         .cta-box h2 { border: none; margin-top: 0; color: white; font-size: 2em; }
-        .btn { display: inline-block; background: #ffffff; color: #d35400; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 900; text-transform: uppercase; }
+        .btn { display: inline-block; background: #ffffff; color: #d35400; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: 900; text-transform: uppercase; transition: transform 0.3s ease; }
+        .btn:hover { transform: scale(1.05); }
         
-        /* --- MOBILE OPTIMIZATION (Fixes Portrait Mode) --- */
         @media (max-width: 600px) {
-            /* Stacks the pills neatly on narrow mobile screens */
             .nav { flex-direction: column; gap: 10px; padding: 0 10px; }
             .nav-pill { width: 100%; box-sizing: border-box; justify-content: center; font-size: 0.95em; }
-            
             h1 { font-size: 1.8em; } 
-            h2 { font-size: 1.25em; margin-top: 30px; } /* Fits long yellow titles perfectly on one line */
+            h2 { font-size: 1.25em; margin-top: 30px; }
             h3 { font-size: 1.1em; } 
             .card { padding: 15px; } 
         }
