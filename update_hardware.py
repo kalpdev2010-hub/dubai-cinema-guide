@@ -1,59 +1,67 @@
 import json
+import urllib.request
 import urllib.parse
+import re
 
-# 1. THE BRAIN: The Successor Map (2026 Flagship Edition)
-# This is where the bot learns which new gear replaces the old ones.
-UPGRADE_MAP = {
-    "Samsung HW-Q990D": {
-        "new_model": "Samsung HW-Q990H",
-        "new_badge": "2026 FLAGSHIP | 11.1.4 CH",
-        "new_desc": "The 2026 evolution of the world's #1 soundbar. Adds 'Sound Elevation' AI to place dialogue perfectly at screen level."
-    },
-    "LG C4 OLED": {
-        "new_model": "LG C6 OLED",
-        "new_badge": "2026 CHOICE | 165Hz OLED",
-        "new_desc": "The 2026 standard. Featuring the new 2nd Gen Tandem WOLED panel and a blistering 165Hz refresh rate for gaming."
-    },
-    "Samsung HW-Q800D": {
-        "new_model": "Samsung HW-Q800H",
-        "new_badge": "2026 PREMIUM | 5.1.2 CH",
-        "new_desc": "The 2026 sweet spot. Massive Atmos performance with updated Auto Volume tech to keep commercials quiet."
-    }
-}
+# CONFIRMED 2026 SUCCESSOR MAP
+# We use the technical model strings found in expert reviews
+TARGET_UPGRADES = [
+    {"old": "LG C4 OLED", "new": "LG C6 OLED", "slug": "lg-c6-oled"},
+    {"old": "Samsung HW-Q990D", "new": "Samsung HW-Q990H", "slug": "samsung-hw-q990h"},
+    {"old": "Sony Bravia 8", "new": "Sony Bravia 8 II", "slug": "sony-bravia-8-ii"}
+]
 
-def generate_amazon_link(model_name):
-    query = urllib.parse.quote(f"{model_name} UAE version")
-    return f"https://www.amazon.ae/s?k={query}&tag=dubaicinema-21"
+def verify_global_existence(slug):
+    """Gate 1: Check RTINGS or AVForums for a technical footprint"""
+    try:
+        # We check the RTINGS review URL structure
+        url = f"https://www.rtings.com/tv/reviews/lg/{slug}" # Simplified for example
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req) as response:
+            return response.getcode() == 200
+    except:
+        return False
 
-print("Hardware Bot is scanning the vault for outdated gear...")
+def check_local_stock(model):
+    """Gate 2: Check Amazon.ae for actual UAE availability"""
+    try:
+        query = urllib.parse.quote(model)
+        url = f"https://www.amazon.ae/s?k={query}"
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req) as resp:
+            content = resp.read().decode('utf-8')
+            return "results for" in content.lower() and "did not match any" not in content.lower()
+    except:
+        return False
 
-# 2. Open the Vault
+print("Starting Double-Gate Verification...")
+
 with open('hardware.json', 'r') as file:
-    categories = json.load(file)
+    data = json.load(file)
 
-upgrades_performed = 0
+upgrades = 0
 
-# 3. Scan each category and each item
-for category in categories:
-    for item in category['items']:
-        current_model = item['model']
-        
-        # 4. If the bot finds an old model in the upgrade map, it performs the surgery
-        if current_model in UPGRADE_MAP:
-            upgrade = UPGRADE_MAP[current_model]
-            print(f"!!! Upgrade Found: Replacing {current_model} with {upgrade['new_model']}")
-            
-            item['model'] = upgrade['new_model']
-            item['badge'] = upgrade['new_badge']
-            item['description'] = upgrade['new_desc']
-            item['amazon_link'] = generate_amazon_link(upgrade['new_model'])
-            
-            upgrades_performed += 1
+for target in TARGET_UPGRADES:
+    global_ok = verify_global_existence(target['slug'])
+    local_ok = check_local_stock(target['new'])
 
-# 5. Save the updated Vault
-if upgrades_performed > 0:
+    if global_ok:
+        for category in data:
+            for item in category['items']:
+                if item['model'] == target['old']:
+                    if local_ok:
+                        print(f"✅ FULL UPGRADE: {target['new']} is live in UAE.")
+                        item['model'] = target['new']
+                        item['badge'] = "2026 CHOICE | VERIFIED"
+                        item['amazon_link'] = f"https://www.amazon.ae/s?k={urllib.parse.quote(target['new'])}&tag=dubaicinema-21"
+                    else:
+                        print(f"⚠️ COMING SOON: {target['new']} exists globally, but not in UAE yet.")
+                        item['badge'] = "COMING SOON | 2026 MODEL"
+                    upgrades += 1
+
+if upgrades > 0:
     with open('hardware.json', 'w') as file:
-        json.dump(categories, file, indent=2)
-    print(f"Success: {upgrades_performed} items auto-upgraded to 2026 specs!")
-else:
-    print("All hardware is currently up to date. No upgrades needed.")
+        json.dump(data, file, indent=2)
+    print(f"Process complete. {upgrades} status updates pushed.")
