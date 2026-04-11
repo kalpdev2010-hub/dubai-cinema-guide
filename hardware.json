@@ -3,24 +3,150 @@
     "category_id": "cat0",
     "category_title": "Soundbars: Ultra-Budget",
     "items": [
-      {
-        "badge": "BEST VALUE | 2.1 Channel",
-        "model": "Samsung HW-C450",
-        "description": "Incredible value with a dedicated wireless subwoofer. The perfect instant upgrade from TV speakers.",
-        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-C450&tag=dubaicinema-21"
-      },
-      {
-        "badge": "TRUE 5.1 | Wired Rears",
-        "model": "Sony HT-S20R",
-        "description": "A highly popular entry point in the UAE for true 5.1 surround sound on a strict budget.",
-        "amazon_link": "https://www.amazon.ae/s?k=Sony%20HT-S20R&tag=dubaicinema-21"
-      },
-      {
-        "badge": "ALL-IN-ONE | Compact",
-        "model": "Hisense HS214",
-        "description": "Perfect for small apartments. Features a built-in subwoofer to save maximum floor space.",
-        "amazon_link": "https://www.amazon.ae/s?k=Hisense%20HS214&tag=dubaicinema-21"
-      }
+      { "badge": "BEST VALUE | 2.1 Channel", "model": "Samsung HW-C450", "description": "Incredible value with a dedicated wireless subwoofer. The perfect instant upgrade from TV speakers.", "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-C450&tag=dubaicinema-21" },
+      { "badge": "TRUE 5.1 | Wired Rears", "model": "Sony HT-S20R", "description": "A highly popular entry point in the UAE for true 5.1 surround sound on a strict budget.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20HT-S20R&tag=dubaicinema-21" },
+      { "badge": "ALL-IN-ONE | Compact", "model": "Hisense HS214", "description": "Perfect for small apartments. Features a built-in subwoofer to save maximum floor space.", "amazon_link": "https://www.amazon.ae/s?k=Hisense%20HS214&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat1",
+    "category_title": "Soundbars: Mid-Range",
+    "items": [
+      { "badge": "PREMIUM | 5.1.2 Dolby Atmos", "model": "Samsung HW-Q800D", "description": "The absolute sweet spot for price-to-performance. True Atmos with dedicated up-firing drivers.", "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-Q800D&tag=dubaicinema-21" },
+      { "badge": "BASS HEAVY | 5.1 Channel", "model": "JBL Bar 500", "description": "Delivers that signature JBL punch. Highly recommended for action movies and electronic music.", "amazon_link": "https://www.amazon.ae/s?k=JBL%20Bar%20500&tag=dubaicinema-21" },
+      { "badge": "ECOSYSTEM | 7.1.3 Channel", "model": "LG S90TR", "description": "The perfect companion for LG OLED TVs, featuring seamless integration and a center up-firing channel.", "amazon_link": "https://www.amazon.ae/s?k=LG%20S90TR&tag=dubaicinema-21" },
+      { "badge": "FLEXUS | Compact 2.1", "model": "Klipsch Flexus CORE 100", "description": "Big Klipsch sound, small footprint. Features a 100-watt Class-D amplifier co-engineered with Onkyo.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+Flexus+CORE+100&tag=dubaicinema-21" },
+      { "badge": "FLEXUS | Dolby Atmos 3.1.2", "model": "Klipsch Flexus CORE 200", "description": "Studio-grade reference audio featuring up-firing drivers for true immersive 3D height effects.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+Flexus+CORE+200&tag=dubaicinema-21" },
+      { "badge": "FLEXUS | Dirac Live 5.1.2", "model": "Klipsch Flexus CORE 300", "description": "The flagship of the Flexus line. The world's first soundbar featuring built-in Dirac Live room correction.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+Flexus+CORE+300&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat2",
+    "category_title": "Soundbars: Premium Standalone",
+    "items": [
+      { "badge": "FLAGSHIP | Virtual Atmos", "model": "Sonos Arc", "description": "The sleekest, most premium standalone bar on the market. Flawless acoustic design and app control.", "amazon_link": "https://www.amazon.ae/s?k=Sonos%20Arc&tag=dubaicinema-21" },
+      { "badge": "COMPACT | Virtual Atmos", "model": "Sonos Beam (Gen 2)", "description": "The ultimate solution for smaller living rooms. Incredible virtualized 3D audio footprint.", "amazon_link": "https://www.amazon.ae/s?k=Sonos%20Beam%20%28Gen%202%29&tag=dubaicinema-21" },
+      { "badge": "AI ENHANCED | Dialogue", "model": "Bose Smart Ultra", "description": "Features AI dialogue enhancement. Perfect for viewers who struggle to hear voices clearly in movies.", "amazon_link": "https://www.amazon.ae/s?k=Bose%20Smart%20Ultra&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat3",
+    "category_title": "Soundbars: Flagship Theater",
+    "items": [
+      { "badge": "THE HOLY GRAIL | 11.1.4 Channel", "model": "Samsung HW-Q990D", "description": "Consistently ranked as the #1 soundbar system in the world. Massive, cinematic wireless audio.", "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-Q990D&tag=dubaicinema-21" },
+      { "badge": "INNOVATIVE | Detachable Rears", "model": "JBL Bar 1300X", "description": "Features battery-powered rear speakers you can detach for movie night and snap back on to charge.", "amazon_link": "https://www.amazon.ae/s?k=JBL%20Bar%201300X&tag=dubaicinema-21" },
+      { "badge": "AUDIOPHILE | Single Bar", "model": "Sennheiser AMBEO Max", "description": "An absolute beast of a soundbar that creates a realistic 3D sound bubble without needing rear speakers.", "amazon_link": "https://www.amazon.ae/s?k=Sennheiser%20AMBEO%20Max&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat4",
+    "category_title": "Displays: Mini-LED",
+    "items": [
+      { "badge": "PREMIUM | QNED", "model": "LG QNED90", "description": "LG's top-tier Mini-LED. Combines Quantum Dot and NanoCell technology for massive brightness and rich colors.", "amazon_link": "https://www.amazon.ae/s?k=LG+QNED90&tag=dubaicinema-21" },
+      { "badge": "VALUE | QNED", "model": "LG QNED85", "description": "A highly accessible 120Hz Mini-LED option perfect for bright living rooms and gaming setups.", "amazon_link": "https://www.amazon.ae/s?k=LG+QNED85&tag=dubaicinema-21" },
+      { "badge": "BUDGET | High Brightness", "model": "TCL C755", "description": "Unbeatable brightness for the price. The ultimate living room TV for daytime viewing in the UAE.", "amazon_link": "https://www.amazon.ae/s?k=TCL%20C755&tag=dubaicinema-21" },
+      { "badge": "PREMIUM | Contrast", "model": "Hisense U8N", "description": "A top-tier pick for gaming and movies, cutting through sun glare with spectacular HDR punch.", "amazon_link": "https://www.amazon.ae/s?k=Hisense%20U8N&tag=dubaicinema-21" },
+      { "badge": "BRIGHT ROOM | Mini-LED", "model": "Samsung QN90D", "description": "The undisputed bright-room king. Fights daytime glare without sacrificing deep blacks or contrast.", "amazon_link": "https://www.amazon.ae/s?k=Samsung+QN90D+Mini+LED&tag=dubaicinema-21" },
+      { "badge": "MASTER DRIVE | Flagship", "model": "Sony Bravia 9", "description": "The undisputed king of Mini-LED. Delivers near-OLED black levels with retina-searing brightness.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20Bravia%209&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat5",
+    "category_title": "Displays: OLED & QD-OLED",
+    "items": [
+      { "badge": "BUDGET OLED | Perfect Blacks", "model": "LG B4 OLED", "description": "The most accessible way to get infinite contrast and perfect black levels for a dark home cinema.", "amazon_link": "https://www.amazon.ae/s?k=LG%20B4%20OLED&tag=dubaicinema-21" },
+      { "badge": "THE STANDARD | 144Hz", "model": "LG C4 OLED", "description": "The most universally recommended TV in the world. Flawless for 90% of buyers and gamers.", "amazon_link": "https://www.amazon.ae/s?k=LG%20C4%20OLED&tag=dubaicinema-21" },
+      { "badge": "2025 UPGRADE | OLED", "model": "LG C5 OLED", "description": "The latest evolution in OLED tech with improved AI processing and Bright Room Ready technology.", "amazon_link": "https://www.amazon.ae/s?k=LG+C5+OLED&tag=dubaicinema-21" },
+      { "badge": "QD-OLED | Vibrant", "model": "Samsung S90D", "description": "Massive brightness for an OLED, powered by Quantum Dots for vibrant colors and HDR punch.", "amazon_link": "https://www.amazon.ae/s?k=Samsung+S90D+OLED&tag=dubaicinema-21" },
+      { "badge": "QD-OLED | Anti-Glare", "model": "Samsung S95D", "description": "A massive punch of color with a revolutionary matte screen that destroys living room reflections.", "amazon_link": "https://www.amazon.ae/s?k=Samsung%20S95D&tag=dubaicinema-21" },
+      { "badge": "MASTER SERIES | QD-OLED", "model": "Sony A95L", "description": "Arguably the most color-accurate, reference-tier consumer TV ever made for pure cinema enthusiasts.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20A95L&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat6",
+    "category_title": "AV Receivers: Entry & Mid-Range",
+    "items": [
+      { "badge": "BUDGET | 7.2 Channel", "model": "Sony STR-DH790", "description": "The absolute most cost-effective way to power a true 5.1.2 Dolby Atmos physical speaker system.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20STR-DH790&tag=dubaicinema-21" },
+      { "badge": "STANDARD | 7.2 Channel", "model": "Denon AVR-X1800H", "description": "The gateway into proper home theater processing with pristine 8K video support.", "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVR-X1800H&tag=dubaicinema-21" },
+      { "badge": "MID-RANGE | 7.2 CH", "model": "Denon AVR-X2800H", "description": "The reliable workhorse for 90% of living rooms. Flawless 8K video support and legendary processing.", "amazon_link": "https://www.amazon.ae/s?k=Denon+AVR-X2800H&tag=dubaicinema-21" },
+      { "badge": "THE KING | 9.4 Channel", "model": "Denon AVC-X3800H", "description": "The undisputed mid-range champion. Processes 11 channels and supports Dirac Live room correction.", "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVC-X3800H&tag=dubaicinema-21" },
+      { "badge": "DIRAC LIVE | 9.2 CH", "model": "Onkyo TX-NR7100", "description": "Incredible value for home theater enthusiasts, including professional Dirac Live calibration out of the box.", "amazon_link": "https://www.amazon.ae/s?k=Onkyo+TX-NR7100&tag=dubaicinema-21" },
+      { "badge": "DIRAC LIVE | 9.2 Channel", "model": "Onkyo TX-RZ50", "description": "Highly sought after because it comes with full Dirac Live room correction built-in right out of the box.", "amazon_link": "https://www.amazon.ae/s?k=Onkyo%20TX-RZ50&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat7",
+    "category_title": "AV Receivers: Flagship",
+    "items": [
+      { "badge": "POWERHOUSE | 11.4 Channel", "model": "Denon AVC-X6800H", "description": "11 channels of massive, clean power built right in for the ultimate dedicated theater room.", "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVC-X6800H&tag=dubaicinema-21" },
+      { "badge": "FLAGSHIP | 11.2 CH", "model": "Onkyo TX-RZ70", "description": "Studio-grade processing and advanced Dirac Live Bass Control for multi-subwoofer perfection.", "amazon_link": "https://www.amazon.ae/s?k=Onkyo+TX-RZ70&tag=dubaicinema-21" },
+      { "badge": "ELITE | 11.4 Channel", "model": "Pioneer VSX-LX805", "description": "Audiophile-grade construction and processing with Advanced MCACC calibration.", "amazon_link": "https://www.amazon.ae/s?k=Pioneer%20VSX-LX805&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat8",
+    "category_title": "Speakers: High-Value & Premium",
+    "items": [
+      { "badge": "BUDGET | Bookshelf", "model": "Sony SS-CS5", "description": "Legendary entry-level speakers. They cost almost nothing but deliver shocking clarity for the price.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20SS-CS5&tag=dubaicinema-21" },
+      { "badge": "HOME THEATER | Tower", "model": "Klipsch RP-8000F II", "description": "Highly efficient, loud, and dynamic. The quintessential horn-loaded cinema speaker.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20RP-8000F%20II&tag=dubaicinema-21" },
+      { "badge": "AUDIOPHILE | Tower", "model": "SVS Prime Pinnacle", "description": "Flawless detail retrieval and a massive soundstage. A favorite of the internet audio community.", "amazon_link": "https://www.amazon.ae/s?k=SVS%20Prime%20Pinnacle&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat9",
+    "category_title": "Subwoofers: The Muscle",
+    "items": [
+      { "badge": "BUDGET | 12-Inch", "model": "Klipsch R-121SW", "description": "Provides excellent, aggressive low-end punch for a standard apartment or living room setup.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20R-121SW&tag=dubaicinema-21" },
+      { "badge": "THE BENCHMARK | Ported", "model": "SVS PB-1000 Pro", "description": "Hits sub-20Hz frequencies that physically shake the couch. Controlled completely via a smartphone app.", "amazon_link": "https://www.amazon.ae/s?k=SVS%20PB-1000%20Pro&tag=dubaicinema-21" },
+      { "badge": "REFERENCE | 10-Inch", "model": "Klipsch RP-1000SW", "description": "High-excursion copper woofer with front-firing Aerofoil port for massive LFE punch.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+RP-1000SW&tag=dubaicinema-21" },
+      { "badge": "HIGH OUTPUT | Ported", "model": "SVS PB-2000 Pro", "description": "A massive step up in output. Features a 550W RMS amplifier capable of pressurizing mid-to-large theater rooms.", "amazon_link": "https://www.amazon.ae/s?k=SVS+PB-2000+Pro&tag=dubaicinema-21" },
+      { "badge": "COMPACT | Dual 8-Inch", "model": "SVS 3000 Micro", "description": "Living room friendly. Dual opposing drivers deliver chest-thumping bass from a cabinet small enough to hide anywhere.", "amazon_link": "https://www.amazon.ae/s?k=SVS+3000+Micro&tag=dubaicinema-21" },
+      { "badge": "MASSIVE | 14-Inch", "model": "Klipsch RP-1400SW", "description": "Displaces a massive amount of air. Designed exclusively for large, dedicated theater rooms.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20RP-1400SW&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat10",
+    "category_title": "Speakers: Bookshelf & Surrounds",
+    "items": [
+      { "badge": "BUDGET | 3-Way", "model": "Sony SS-CS5", "description": "Legendary entry-level speakers. They cost almost nothing but deliver shocking clarity for the price.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20SS-CS5&tag=dubaicinema-21" },
+      { "badge": "REFERENCE | Horn Tweeter", "model": "Klipsch RP-500M II", "description": "Incredible clarity and dynamics. Perfect as high-end front left/right speakers or dedicated surrounds.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20RP-500M%20II&tag=dubaicinema-21" },
+      { "badge": "HIGH EFFICIENCY", "model": "Klipsch RP-600M II", "description": "Explosive dynamics. Perfect for dedicated surround duty or as main Left/Right speakers.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+RP-600M+II&tag=dubaicinema-21" },
+      { "badge": "HIGH VALUE | 2-Way", "model": "Elac Debut 2.0 B6.2", "description": "Designed by legendary engineer Andrew Jones, offering an incredibly flat and accurate response.", "amazon_link": "https://www.amazon.ae/s?k=Elac+Debut+2.0+B6.2&tag=dubaicinema-21" },
+      { "badge": "AUDIOPHILE | 2-Way", "model": "SVS Prime Bookshelf", "description": "Punching way above their weight class. Flawless detail retrieval for complex movie soundtracks.", "amazon_link": "https://www.amazon.ae/s?k=SVS%20Prime%20Bookshelf&tag=dubaicinema-21" },
+      { "badge": "REFERENCE | Uni-Q", "model": "KEF LS50 Meta", "description": "The legendary reference bookshelf. Metamaterial Absorption Technology eliminates unwanted sound.", "amazon_link": "https://www.amazon.ae/s?k=KEF+LS50+Meta&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat11",
+    "category_title": "Speakers: Floorstanding (Tall Boys)",
+    "items": [
+      { "badge": "BUDGET | Tower", "model": "Sony SS-CS3", "description": "The most affordable way to get a dedicated floorstanding front soundstage.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20SS-CS3&tag=dubaicinema-21" },
+      { "badge": "HIGH OUTPUT | Tower", "model": "Klipsch R-600F", "description": "Highly efficient horn tweeters provide massive dynamic impact without needing a heavy-duty amplifier.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20R-600F&tag=dubaicinema-21" },
+      { "badge": "HOME THEATER | Tower", "model": "Klipsch RP-8000F II", "description": "Highly efficient, loud, and dynamic. The quintessential horn-loaded cinema speaker.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20RP-8000F%20II&tag=dubaicinema-21" },
+      { "badge": "AUDIOPHILE | 3.5-Way", "model": "SVS Prime Tower", "description": "A highly accurate, audiophile-grade crossover design that delivers pristine clarity and excellent mid-range punch.", "amazon_link": "https://www.amazon.ae/s?k=SVS+Prime+Tower&tag=dubaicinema-21" },
+      { "badge": "REFERENCE | Tower", "model": "SVS Prime Pinnacle", "description": "Flawless detail retrieval and a massive soundstage. A favorite of the internet audio community.", "amazon_link": "https://www.amazon.ae/s?k=SVS%20Prime%20Pinnacle&tag=dubaicinema-21" },
+      { "badge": "FLAGSHIP | 3-Way", "model": "SVS Ultra Evolution", "description": "Time-aligned cabinet design that delivers audiophile-grade precision and massive cinematic impact.", "amazon_link": "https://www.amazon.ae/s?k=SVS+Ultra+Evolution+Tower&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat12",
+    "category_title": "Speakers: Dolby Atmos & Height",
+    "items": [
+      { "badge": "UP-FIRING | Module", "model": "Sony SSCSE", "description": "Sits perfectly on top of your existing speakers to bounce sound off the ceiling for Atmos effects.", "amazon_link": "https://www.amazon.ae/s?k=Sony%20SSCSE&tag=dubaicinema-21" },
+      { "badge": "VERSATILE | Mountable", "model": "Polk Audio OWM3", "description": "A massive favorite in the audio community. Easily mounts to walls or ceilings for discrete height channels.", "amazon_link": "https://www.amazon.ae/s?k=Polk%20Audio%20OWM3&tag=dubaicinema-21" },
+      { "badge": "UP-FIRING | Module", "model": "Klipsch R-40SA", "description": "High-efficiency horn tweeters designed to deliver highly accurate overhead sound effects.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20R-40SA&tag=dubaicinema-21" },
+      { "badge": "VERSATILE | Atmos", "model": "Klipsch RP-500SA II", "description": "Can be used resting on top of towers or mounted high on the wall for direct surround effects.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+RP-500SA+II&tag=dubaicinema-21" },
+      { "badge": "WALL MOUNT | Module", "model": "SVS Prime Elevation", "description": "The ultimate solution for Atmos height effects. Designed to mount high on any wall and angle down at you.", "amazon_link": "https://www.amazon.ae/s?k=SVS%20Prime%20Elevation&tag=dubaicinema-21" },
+      { "badge": "UNI-Q | Atmos Module", "model": "KEF Q50a", "description": "Uni-Q driver design creates precise 3D overhead audio mapping to perfectly match KEF systems.", "amazon_link": "https://www.amazon.ae/s?k=KEF+Q50a&tag=dubaicinema-21" }
+    ]
+  },
+  {
+    "category_id": "cat13",
+    "category_title": "Speakers: Center Channels",
+    "items": [
+      { "badge": "HIGH OUTPUT | Center", "model": "Klipsch RP-504C II", "description": "Massive dialogue clarity to match the RP-8000F towers. Never miss a whisper during action scenes.", "amazon_link": "https://www.amazon.ae/s?k=Klipsch+RP-504C+II&tag=dubaicinema-21" },
+      { "badge": "UNI-Q | Center", "model": "KEF Q650c", "description": "Uses KEF's Uni-Q driver to ensure perfect dialogue clarity for every seat on the couch.", "amazon_link": "https://www.amazon.ae/s?k=KEF+Q650c&tag=dubaicinema-21" },
+      { "badge": "3-WAY | Center", "model": "SVS Prime Center", "description": "A true 3-way center speaker that punches way above its price tag with incredibly crisp vocals.", "amazon_link": "https://www.amazon.ae/s?k=SVS+Prime+Center&tag=dubaicinema-21" }
     ]
   }
 ]
