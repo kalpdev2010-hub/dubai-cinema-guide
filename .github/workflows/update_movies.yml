@@ -1,0 +1,33 @@
+name: Weekly Movie Library Update
+
+on:
+  schedule:
+    # This standard cron code means: "Run at 00:00 every Friday"
+    - cron: '0 0 * * 5'
+  # This line gives us a manual 'Run' button for testing!
+  workflow_dispatch: 
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Wake up the Bot (Run Script)
+        run: python update_library.py
+
+      - name: Save new data to the Vault
+        run: |
+          git config --global user.name 'GitHub Automation Bot'
+          git config --global user.email 'bot@dubiatechnetwork.com'
+          git add movies.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-added new movies to the vault" && git push)
