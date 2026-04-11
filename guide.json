@@ -1,0 +1,80 @@
+[
+  {
+    "title": "1. The Visuals: TV Panels & Size",
+    "items": [
+      {
+        "heading": "OLED vs. Mini-LED",
+        "body": "<p><strong>OLED:</strong> Perfect, true blacks because each pixel turns off completely. Best for dark, controlled cinema rooms.</p><p><strong>Mini-LED:</strong> Incredibly bright. Best if your living room has a lot of sunlight during the day.</p>"
+      },
+      {
+        "heading": "Screen Size Matters",
+        "body": "<p>For a true cinematic experience, bigger is usually better. If you are sitting 2 to 3 meters away, 65\" is the minimum, but 77\" or 85\" is the \"Holy Grail\" standard.</p>"
+      }
+    ]
+  },
+  {
+    "title": "2. Resolution & The \"Magic\" of HDR",
+    "items": [
+      {
+        "heading": "4K (Ultra HD)",
+        "body": "<p>4K is just the number of pixels (sharper image). It is 4x the resolution of standard 1080p HD.</p>"
+      },
+      {
+        "heading": "HDR10 & Dolby Vision",
+        "body": "<p><span class=\"highlight\">HDR10</span> is the basic standard for better brightness. <span class=\"highlight\">Dolby Vision</span> is the premium version that adjusts the picture frame-by-frame, ensuring you never lose detail in dark shadows or bright highlights.</p>"
+      },
+      {
+        "heading": "HLG (Hybrid Log Gamma)",
+        "body": "<p>Used primarily for live broadcasts like 4K sports. If you watch football or F1 in 4K, you are likely using HLG.</p>"
+      }
+    ]
+  },
+  {
+    "title": "3. The Audio Formats (3D Sound)",
+    "items": [
+      {
+        "heading": "Dolby Atmos",
+        "body": "<p>The industry leader. Atmos uses \"objects\" to place sound anywhere in a 3D space, including overhead. Most common in streaming (Netflix, Disney+).</p>"
+      },
+      {
+        "heading": "DTS:X",
+        "body": "<p>The \"flexible\" alternative to Atmos. It doesn't require a strict speaker layout and is often found on 4K Blu-ray discs. It is known for high-impact, powerful audio.</p>"
+      },
+      {
+        "heading": "Auro-3D",
+        "body": "<p>A specialized format that uses three vertical layers of sound. It is highly prized by audiophiles for music and \"natural\" sound immersion.</p>"
+      }
+    ]
+  },
+  {
+    "title": "4. The \"Sound Numbers\" Explained (e.g., 5.1.2)",
+    "items": [
+      {
+        "heading": "",
+        "body": "<p>When shopping for audio, you will see numbers like <strong>5.1.2</strong> or <strong>7.1.4</strong>. Here is the secret decoder ring:</p><ul><li><strong>The First Number (e.g., 5):</strong> The number of ear-level speakers (Left, Right, Center, and Surrounds).</li><li><strong>The Second Number (e.g., .1):</strong> The number of Subwoofers (the deep bass you feel in your chest).</li><li><strong>The Third Number (e.g., .2):</strong> The number of upward-firing or ceiling speakers. This is the \"Atmos\" number that gives you overhead sound.</li></ul>"
+      }
+    ]
+  },
+  {
+    "title": "5. Connections: What is eARC?",
+    "items": [
+      {
+        "heading": "HDMI eARC (Enhanced Audio Return Channel)",
+        "body": "<p>This is the most important port on your TV. eARC allows your TV to send fully uncompressed, high-quality audio (like Dolby Atmos) directly back to your soundbar or AV Receiver over a single HDMI cable.</p>"
+      }
+    ]
+  },
+  {
+    "title": "6. Soundbars vs. AVR (Receivers)",
+    "items": [
+      {
+        "heading": "Premium Soundbars",
+        "body": "<p><strong>Pros:</strong> Clean look, zero messy wires, easy to set up. Modern flagship soundbars offer incredible Atmos immersion in a compact package.<br><strong>Cons:</strong> Harder to upgrade individual parts later.</p>"
+      },
+      {
+        "heading": "AV Receivers (AVR) & Dedicated Speakers",
+        "body": "<p><strong>Pros:</strong> The ultimate theater experience. You can place speakers exactly where they need to be and upgrade components over time.<br><strong>Cons:</strong> Requires running speaker wire around the room and takes up more space.</p>"
+      }
+    ]
+  }
+]
