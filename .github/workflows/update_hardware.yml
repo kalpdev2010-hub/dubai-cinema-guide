@@ -1,0 +1,32 @@
+name: Semi-Annual Hardware Refresh
+
+on:
+  schedule:
+    # Runs at midnight on January 15th and July 15th
+    - cron: '0 0 15 1,7 *'
+  workflow_dispatch: # Allows us to run it manually for testing!
+
+jobs:
+  refresh-gear:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Run Hardware Intelligence Script
+        run: python update_hardware.py
+
+      - name: Commit hardware upgrades
+        run: |
+          git config --global user.name 'GitHub Automation Bot'
+          git config --global user.email 'bot@dubiatechnetwork.com'
+          git add hardware.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Auto-upgraded hardware models to latest versions" && git push)
