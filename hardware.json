@@ -1,0 +1,26 @@
+[
+  {
+    "category_id": "cat0",
+    "category_title": "Soundbars: Ultra-Budget",
+    "items": [
+      {
+        "badge": "BEST VALUE | 2.1 Channel",
+        "model": "Samsung HW-C450",
+        "description": "Incredible value with a dedicated wireless subwoofer. The perfect instant upgrade from TV speakers.",
+        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-C450&tag=dubaicinema-21"
+      },
+      {
+        "badge": "TRUE 5.1 | Wired Rears",
+        "model": "Sony HT-S20R",
+        "description": "A highly popular entry point in the UAE for true 5.1 surround sound on a strict budget.",
+        "amazon_link": "https://www.amazon.ae/s?k=Sony%20HT-S20R&tag=dubaicinema-21"
+      },
+      {
+        "badge": "ALL-IN-ONE | Compact",
+        "model": "Hisense HS214",
+        "description": "Perfect for small apartments. Features a built-in subwoofer to save maximum floor space.",
+        "amazon_link": "https://www.amazon.ae/s?k=Hisense%20HS214&tag=dubaicinema-21"
+      }
+    ]
+  }
+]
