@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech News & Radar | Cinema Gear</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid #ffd700;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        header p {
+            color: #aaaaaa;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .news-card {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #ffd700;
+            transition: transform 0.3s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .status-badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .news-date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .news-title {
+            font-size: 1.5rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        .news-headline {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .news-desc {
+            color: #aaaaaa;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .track-btn {
+            display: inline-block;
+            background: transparent;
+            color: #ffd700;
+            border: 1px solid #ffd700;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .track-btn:hover {
+            background: #ffd700;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tech News & Radar</h1>
+        <p>Tracking the latest home cinema announcements before they hit the UAE</p>
+    </header>
+
+    <div class="container">
+        <div class="news-grid" id="news-container">
+            </div>
+    </div>
+
+    <script>
+        // Fetch the news data from the vault
+        fetch('news.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('news-container');
+                
+                data.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'news-card';
+                    
+                    card.innerHTML = `
+                        <div class="status-badge">${item.status}</div>
+                        <div class="news-date">Expected: ${item.date}</div>
+                        <h2 class="news-title">${item.brand} ${item.model}</h2>
+                        <div class="news-headline">${item.headline}</div>
+                        <p class="news-desc">${item.description}</p>
+                        <div class="track-btn">Tracking Availability...</div>
+                    `;
+                    
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading news:', error));
+    </script>
+
+</body>
+</html>
