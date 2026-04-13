@@ -150,6 +150,32 @@
     </header>
 
     <div class="container">
+        <div class="filter-section" style="text-align: center; margin: 40px 0; font-family: 'Inter', sans-serif;">
+    <label for="brand-filter" style="color: #ffd700; font-weight: bold; margin-right: 15px; letter-spacing: 1px;">BROWSE BY BRAND:</label>
+    <select id="brand-filter" onchange="filterNews()" style="background: #111; color: #fff; border: 2px solid #ffd700; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; outline: none;">
+        <option value="all">View All Updates</option>
+        <option value="Bose">Bose</option>
+        <option value="Denon">Denon</option>
+        <option value="Elac">Elac</option>
+        <option value="Hisense">Hisense</option>
+        <option value="JBL">JBL</option>
+        <option value="KEF">KEF</option>
+        <option value="Klipsch">Klipsch</option>
+        <option value="LG">LG</option>
+        <option value="Marantz">Marantz</option>
+        <option value="Nakamichi">Nakamichi</option>
+        <option value="Onkyo">Onkyo</option>
+        <option value="Pioneer">Pioneer</option>
+        <option value="Polk Audio">Polk Audio</option>
+        <option value="Samsung">Samsung</option>
+        <option value="Sennheiser">Sennheiser</option>
+        <option value="Sonos">Sonos</option>
+        <option value="Sony">Sony</option>
+        <option value="SVS">SVS</option>
+        <option value="TCL">TCL</option>
+        <option value="Ultimea">Ultimea</option>
+    </select>
+</div>
         <div class="news-grid" id="news-container">
             </div>
     </div>
@@ -163,36 +189,65 @@
     </div>
 
     <script>
-    // Fetch the live news feed from GitHub Issues
-        fetch('https://api.github.com/repos/kalpdev2010-hub/dubai-cinema-guide/issues?state=open')
-            .then(response => response.json())
-            .then(issues => {
-                const container = document.getElementById('news-container');
-                container.innerHTML = ''; // Clear the container
-                
-                issues.forEach(issue => {
-                    // Grab the brand name from the Zapier label
-                    const brand = issue.labels.length > 0 ? issue.labels[0].name : 'Tech';
-                    // Format the date
-                    const date = new Date(issue.created_at).toLocaleDateString();
+    let allIssues = [];
 
-                    const card = document.createElement('div');
-                    card.className = 'news-card';
-                    
-                    // Build the dynamic card
-                    card.innerHTML = `
-                        <div class="status-badge">JUST IN</div>
-                        <div class="news-date">Spotted: ${date}</div>
-                        <h2 class="news-title">${brand} Radar</h2>
-                        <div class="news-headline">${issue.title}</div>
-                        <p class="news-desc" style="margin-top: 15px;">
-                            <a href="${issue.body}" target="_blank" style="color:#ffd700; text-decoration:none; font-weight:bold;">Read Full Announcement ➔</a>
-                        </p>
-                    `;
-                    container.appendChild(card);
+        // 1. Initial Fetch from GitHub
+        function fetchNews() {
+            fetch('https://api.github.com/repos/kalpdev2010-hub/dubai-cinema-guide/issues?state=open')
+                .then(response => response.json())
+                .then(issues => {
+                    allIssues = issues;
+                    renderCards(issues);
+                })
+                .catch(err => console.error("Error loading news feed:", err));
+        }
+
+        // 2. The Card Building Engine
+        function renderCards(issues) {
+            const container = document.getElementById('news-container');
+            container.innerHTML = ''; 
+
+            if (issues.length === 0) {
+                container.innerHTML = '<div style="color:white; text-align:center; width:100%; padding:50px; font-family:Inter, sans-serif;">No updates found for this brand yet. Stay tuned!</div>';
+                return;
+            }
+
+            issues.forEach(issue => {
+                const brand = issue.labels.length > 0 ? issue.labels[0].name : 'AV Update';
+                const date = new Date(issue.created_at).toLocaleDateString('en-AE', { day: 'numeric', month: 'short', year: 'numeric' });
+
+                const card = document.createElement('div');
+                card.className = 'news-card';
+                
+                card.innerHTML = `
+                    <div class="status-badge">AV RADAR</div>
+                    <div class="news-date">Spotted: ${date}</div>
+                    <h2 class="news-title">${brand} Home Cinema</h2>
+                    <div class="news-headline">${issue.title}</div>
+                    <p class="news-desc" style="margin-top: 20px;">
+                        <a href="${issue.body}" target="_blank" style="color:#ffd700; text-decoration:none; font-weight:bold; border: 1px solid #ffd700; padding: 8px 15px; border-radius: 4px; display: inline-block;">Explore Full Specs ➔</a>
+                    </p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // 3. The Filter Function
+        function filterNews() {
+            const selectedBrand = document.getElementById('brand-filter').value;
+            if (selectedBrand === 'all') {
+                renderCards(allIssues);
+            } else {
+                const filtered = allIssues.filter(issue => {
+                    const brandLabel = issue.labels.length > 0 ? issue.labels[0].name : '';
+                    return brandLabel.toLowerCase() === selectedBrand.toLowerCase();
                 });
-            })
-            .catch(error => console.error('Error loading news:', error));    
+                renderCards(filtered);
+            }
+        }
+
+        // Start the engine
+        fetchNews();    
     </script>
 
 </body>
