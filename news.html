@@ -207,10 +207,24 @@
             const container = document.getElementById('news-container');
             container.innerHTML = ''; 
 
-            if (issues.length === 0) {
-                container.innerHTML = '<div style="color:white; text-align:center; width:100%; padding:50px; font-family:Inter, sans-serif;">No updates found for this brand yet. Stay tuned!</div>';
+                        if (issues.length === 0) {
+                container.innerHTML = `
+                    <div style="
+                        color: white; 
+                        text-align: center; 
+                        grid-column: 1 / -1; 
+                        width: 100%; 
+                        padding: 100px 20px; 
+                        font-family: 'Inter', sans-serif;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                        opacity: 0.7;
+                    ">
+                        No updates found for this brand yet. Stay tuned!
+                    </div>`;
                 return;
             }
+
 
             issues.forEach(issue => {
                 const brand = issue.labels.length > 0 ? issue.labels[0].name : 'AV Update';
