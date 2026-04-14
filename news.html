@@ -150,33 +150,69 @@
     </header>
 
     <div class="container">
-        <div class="filter-section" style="text-align: center; margin: 50px 0; font-family: 'Inter', sans-serif;">
-    <label for="brand-filter" style="color: #ffd700; font-weight: bold; margin-right: 15px; letter-spacing: 2px; font-size: 14px; text-transform: uppercase;">Browse By Brand:</label>
-    <select id="brand-filter" onchange="filterNews()" style="background: #000; color: #ffd700; border: 2px solid #ffd700; padding: 12px 30px; border-radius: 10px; cursor: pointer; font-size: 16px; font-weight: bold; outline: none; transition: 0.3s; appearance: none; -webkit-appearance: none; text-align: center; min-width: 250px;">
-        <option value="all">View All Updates</option>
-        <option value="Bose">Bose</option>
-        <option value="Denon">Denon</option>
-        <option value="Elac">Elac</option>
-        <option value="Hisense">Hisense</option>
-        <option value="JBL">JBL</option>
-        <option value="KEF">KEF</option>
-        <option value="Klipsch">Klipsch</option>
-        <option value="LG">LG</option>
-        <option value="Marantz">Marantz</option>
-        <option value="Nakamichi">Nakamichi</option>
-        <option value="Onkyo">Onkyo</option>
-        <option value="Pioneer">Pioneer</option>
-        <option value="Polk Audio">Polk Audio</option>
-        <option value="Samsung">Samsung</option>
-        <option value="Sennheiser">Sennheiser</option>
-        <option value="Sonos">Sonos</option>
-        <option value="Sony">Sony</option>
-        <option value="SVS">SVS</option>
-        <option value="TCL">TCL</option>
-        <option value="Ultimea">Ultimea</option>
-        <option value="Yamaha">Yamaha</option>
-    </select>
-</div>        <div class="news-grid" id="news-container">
+        <div class="brand-filter-wrapper" style="text-align: center; margin: 30px 0; padding: 0 15px;">
+    <h3 style="color: #ffd700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Browse By Brand</h3>
+    <div id="brand-buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1100px; margin: 0 auto;">
+        <button class="filter-btn active" onclick="filterNews('all', this)">All</button>
+        <button class="filter-btn" onclick="filterNews('Bose', this)">Bose</button>
+        <button class="filter-btn" onclick="filterNews('Denon', this)">Denon</button>
+        <button class="filter-btn" onclick="filterNews('Elac', this)">Elac</button>
+        <button class="filter-btn" onclick="filterNews('Hisense', this)">Hisense</button>
+        <button class="filter-btn" onclick="filterNews('JBL', this)">JBL</button>
+        <button class="filter-btn" onclick="filterNews('KEF', this)">KEF</button>
+        <button class="filter-btn" onclick="filterNews('Klipsch', this)">Klipsch</button>
+        <button class="filter-btn" onclick="filterNews('LG', this)">LG</button>
+        <button class="filter-btn" onclick="filterNews('Marantz', this)">Marantz</button>
+        <button class="filter-btn" onclick="filterNews('Nakamichi', this)">Nakamichi</button>
+        <button class="filter-btn" onclick="filterNews('Onkyo', this)">Onkyo</button>
+        <button class="filter-btn" onclick="filterNews('Pioneer', this)">Pioneer</button>
+        <button class="filter-btn" onclick="filterNews('Polk Audio', this)">Polk Audio</button>
+        <button class="filter-btn" onclick="filterNews('Samsung', this)">Samsung</button>
+        <button class="filter-btn" onclick="filterNews('Sennheiser', this)">Sennheiser</button>
+        <button class="filter-btn" onclick="filterNews('Sonos', this)">Sonos</button>
+        <button class="filter-btn" onclick="filterNews('Sony', this)">Sony</button>
+        <button class="filter-btn" onclick="filterNews('SVS', this)">SVS</button>
+        <button class="filter-btn" onclick="filterNews('TCL', this)">TCL</button>
+        <button class="filter-btn" onclick="filterNews('Ultimea', this)">Ultimea</button>
+        <button class="filter-btn" onclick="filterNews('Yamaha', this)">Yamaha</button>
+    </div>
+</div>
+
+<style>
+    .filter-btn {
+        background: #1a1a1a;
+        color: #888;
+        border: 1px solid #333;
+        padding: 8px 18px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+        border-color: #ffd700;
+        color: #fff;
+    }
+
+    .filter-btn.active {
+        background: #ffd700;
+        color: #000;
+        border-color: #ffd700;
+    }
+
+    /* Ensures the grid looks good on small mobile screens */
+    @media (max-width: 600px) {
+        .filter-btn {
+            padding: 6px 14px;
+            font-size: 12px;
+        }
+    }
+</style>
+
             </div>
     </div>
     <div class="network-footer">
@@ -246,9 +282,14 @@
             });
         }
 
-        // 3. The Filter Function
-        function filterNews() {
-            const selectedBrand = document.getElementById('brand-filter').value;
+                // 3. The Filter Function (Upgraded for Buttons)
+        function filterNews(selectedBrand, btnElement) {
+            // 1. Handle Button Styles
+            const allBtns = document.querySelectorAll('.filter-btn');
+            allBtns.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // 2. Filter the Data
             if (selectedBrand === 'all') {
                 renderCards(allIssues);
             } else {
@@ -258,7 +299,14 @@
                 });
                 renderCards(filtered);
             }
+            
+            // 3. Smooth Scroll to top of results
+            const scrollTarget = document.getElementById('brand-buttons');
+            if (scrollTarget) {
+                window.scrollTo({ top: scrollTarget.offsetTop - 20, behavior: 'smooth' });
+            }
         }
+
 
         // Start the engine
         fetchNews();    
