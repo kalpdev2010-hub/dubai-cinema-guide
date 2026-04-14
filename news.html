@@ -81,21 +81,27 @@
             line-height: 1.5;
             margin-bottom: 20px;
         }
-        .track-btn {
-            display: inline-block;
-            background: transparent;
-            color: #ffd700;
-            border: 1px solid #ffd700;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
+        .filter-btn {
+            background: #1a1a1a;
+            color: #888;
+            border: 1px solid #333;
+            padding: 8px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            cursor: default;
+            white-space: nowrap;
         }
-        .track-btn:hover {
+        .filter-btn:hover {
+            border-color: #ffd700;
+            color: #fff;
+        }
+        .filter-btn.active {
             background: #ffd700;
             color: #000;
+            border-color: #ffd700;
         }
         .network-footer {
             background-color: #0a0a0a;
@@ -135,6 +141,14 @@
             background-color: #2a2a2a;
             box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
         }
+
+        /* Responsive Mobile Tweak for Buttons */
+        @media (max-width: 600px) {
+            .filter-btn {
+                padding: 6px 14px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -151,70 +165,36 @@
 
     <div class="container">
         <div class="brand-filter-wrapper" style="text-align: center; margin: 30px 0; padding: 0 15px;">
-    <h3 style="color: #ffd700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Browse By Brand</h3>
-    <div id="brand-buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1100px; margin: 0 auto;">
-        <button class="filter-btn active" onclick="filterNews('all', this)">All</button>
-        <button class="filter-btn" onclick="filterNews('Bose', this)">Bose</button>
-        <button class="filter-btn" onclick="filterNews('Denon', this)">Denon</button>
-        <button class="filter-btn" onclick="filterNews('Elac', this)">Elac</button>
-        <button class="filter-btn" onclick="filterNews('Hisense', this)">Hisense</button>
-        <button class="filter-btn" onclick="filterNews('JBL', this)">JBL</button>
-        <button class="filter-btn" onclick="filterNews('KEF', this)">KEF</button>
-        <button class="filter-btn" onclick="filterNews('Klipsch', this)">Klipsch</button>
-        <button class="filter-btn" onclick="filterNews('LG', this)">LG</button>
-        <button class="filter-btn" onclick="filterNews('Marantz', this)">Marantz</button>
-        <button class="filter-btn" onclick="filterNews('Nakamichi', this)">Nakamichi</button>
-        <button class="filter-btn" onclick="filterNews('Onkyo', this)">Onkyo</button>
-        <button class="filter-btn" onclick="filterNews('Pioneer', this)">Pioneer</button>
-        <button class="filter-btn" onclick="filterNews('Polk Audio', this)">Polk Audio</button>
-        <button class="filter-btn" onclick="filterNews('Samsung', this)">Samsung</button>
-        <button class="filter-btn" onclick="filterNews('Sennheiser', this)">Sennheiser</button>
-        <button class="filter-btn" onclick="filterNews('Sonos', this)">Sonos</button>
-        <button class="filter-btn" onclick="filterNews('Sony', this)">Sony</button>
-        <button class="filter-btn" onclick="filterNews('SVS', this)">SVS</button>
-        <button class="filter-btn" onclick="filterNews('TCL', this)">TCL</button>
-        <button class="filter-btn" onclick="filterNews('Ultimea', this)">Ultimea</button>
-        <button class="filter-btn" onclick="filterNews('Yamaha', this)">Yamaha</button>
-    </div>
-</div>
-
-<style>
-    .filter-btn {
-        background: #1a1a1a;
-        color: #888;
-        border: 1px solid #333;
-        padding: 8px 18px;
-        border-radius: 25px;
-        cursor: pointer;
-        font-family: 'Inter', sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        white-space: nowrap;
-    }
-
-    .filter-btn:hover {
-        border-color: #ffd700;
-        color: #fff;
-    }
-
-    .filter-btn.active {
-        background: #ffd700;
-        color: #000;
-        border-color: #ffd700;
-    }
-
-    /* Ensures the grid looks good on small mobile screens */
-    @media (max-width: 600px) {
-        .filter-btn {
-            padding: 6px 14px;
-            font-size: 12px;
-        }
-    }
-</style>
-
+            <h3 style="color: #ffd700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;">Browse By Brand</h3>
+            <div id="brand-buttons" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 1100px; margin: 0 auto;">
+                <button class="filter-btn active" onclick="filterNews('all', this)">All</button>
+                <button class="filter-btn" onclick="filterNews('Bose', this)">Bose</button>
+                <button class="filter-btn" onclick="filterNews('Denon', this)">Denon</button>
+                <button class="filter-btn" onclick="filterNews('Elac', this)">Elac</button>
+                <button class="filter-btn" onclick="filterNews('Hisense', this)">Hisense</button>
+                <button class="filter-btn" onclick="filterNews('JBL', this)">JBL</button>
+                <button class="filter-btn" onclick="filterNews('KEF', this)">KEF</button>
+                <button class="filter-btn" onclick="filterNews('Klipsch', this)">Klipsch</button>
+                <button class="filter-btn" onclick="filterNews('LG', this)">LG</button>
+                <button class="filter-btn" onclick="filterNews('Marantz', this)">Marantz</button>
+                <button class="filter-btn" onclick="filterNews('Nakamichi', this)">Nakamichi</button>
+                <button class="filter-btn" onclick="filterNews('Onkyo', this)">Onkyo</button>
+                <button class="filter-btn" onclick="filterNews('Pioneer', this)">Pioneer</button>
+                <button class="filter-btn" onclick="filterNews('Polk Audio', this)">Polk Audio</button>
+                <button class="filter-btn" onclick="filterNews('Samsung', this)">Samsung</button>
+                <button class="filter-btn" onclick="filterNews('Sennheiser', this)">Sennheiser</button>
+                <button class="filter-btn" onclick="filterNews('Sonos', this)">Sonos</button>
+                <button class="filter-btn" onclick="filterNews('Sony', this)">Sony</button>
+                <button class="filter-btn" onclick="filterNews('SVS', this)">SVS</button>
+                <button class="filter-btn" onclick="filterNews('TCL', this)">TCL</button>
+                <button class="filter-btn" onclick="filterNews('Ultimea', this)">Ultimea</button>
+                <button class="filter-btn" onclick="filterNews('Yamaha', this)">Yamaha</button>
             </div>
+        </div>
+
+        <div class="news-grid" id="news-container" style="margin-top: 40px;"></div>
     </div>
+
     <div class="network-footer">
         <h4>Explore The Dubai Tech Network</h4>
         <div class="network-links">
@@ -225,7 +205,7 @@
     </div>
 
     <script>
-    let allIssues = [];
+        let allIssues = [];
 
         // 1. Initial Fetch from GitHub
         function fetchNews() {
@@ -243,7 +223,7 @@
             const container = document.getElementById('news-container');
             container.innerHTML = ''; 
 
-                        if (issues.length === 0) {
+            if (issues.length === 0) {
                 container.innerHTML = `
                     <div style="
                         color: white; 
@@ -260,7 +240,6 @@
                     </div>`;
                 return;
             }
-
 
             issues.forEach(issue => {
                 const brand = issue.labels.length > 0 ? issue.labels[0].name : 'AV Update';
@@ -282,14 +261,14 @@
             });
         }
 
-                // 3. The Filter Function (Upgraded for Buttons)
+        // 3. The Filter Function (Upgraded for Buttons)
         function filterNews(selectedBrand, btnElement) {
-            // 1. Handle Button Styles
+            // Handle Button Styles
             const allBtns = document.querySelectorAll('.filter-btn');
             allBtns.forEach(btn => btn.classList.remove('active'));
             btnElement.classList.add('active');
 
-            // 2. Filter the Data
+            // Filter the Data
             if (selectedBrand === 'all') {
                 renderCards(allIssues);
             } else {
@@ -300,17 +279,15 @@
                 renderCards(filtered);
             }
             
-            // 3. Smooth Scroll to top of results
+            // Smooth Scroll to top of results
             const scrollTarget = document.getElementById('brand-buttons');
             if (scrollTarget) {
                 window.scrollTo({ top: scrollTarget.offsetTop - 20, behavior: 'smooth' });
             }
         }
 
-
         // Start the engine
         fetchNews();    
     </script>
-
 </body>
 </html>
