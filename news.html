@@ -249,14 +249,14 @@
                 card.className = 'news-card';
                 
                 card.innerHTML = `
-                    <div class="status-badge">AV RADAR</div>
-                    <div class="news-date">Spotted: ${date}</div>
-                    <h2 class="news-title">${brand} Home Cinema</h2>
-                    <div class="news-headline">${issue.title}</div>
-                    <p class="news-desc" style="margin-top: 20px;">
-                        <a href="${issue.body}" target="_blank" style="color:#ffd700; text-decoration:none; font-weight:bold; border: 1px solid #ffd700; padding: 8px 15px; border-radius: 4px; display: inline-block;">Explore Full Specs ➔</a>
-                    </p>
-                `;
+    <div class="status-badge">AV RADAR</div>
+    <div class="news-date">Spotted: ${date}</div>
+    <h2 class="news-title">${issue.title}</h2>
+    <div class="news-headline" style="color: #ffd700; text-transform: uppercase; font-size: 0.9rem;">Category: ${brand} Update</div>
+    <p class="news-desc" style="margin-top: 20px;">
+        <a href="${issue.body}" target="_blank" style="color:#ffd700; text-decoration:none; font-weight:bold; border: 1px solid #ffd700; padding: 8px 15px; border-radius: 4px; display: inline-block;">Explore Full Specs ➔</a>
+    </p>
+`;
                 container.appendChild(card);
             });
         }
