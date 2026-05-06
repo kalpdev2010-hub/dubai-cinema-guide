@@ -3,6 +3,8 @@ import json
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
+import re
+import html
 
 # Contains only the 20 links routed to the Cinema Guide
 FEEDS = {
@@ -64,10 +66,14 @@ for brand, rss_url in FEEDS.items():
             root = tree.getroot()
             
             for entry in root.findall('{http://www.w3.org/2005/Atom}entry')[:5]:
-                title = entry.find('{http://www.w3.org/2005/Atom}title').text
+                raw_title = entry.find('{http://www.w3.org/2005/Atom}title').text
+                
+                # NEW: This line removes the <b> tags and cleans the title perfectly
+                clean_title = html.unescape(re.sub(r'<[^>]+>', '', raw_title))
+                
                 raw_link = entry.find('{http://www.w3.org/2005/Atom}link').attrib['href']
                 clean_link = raw_link.split('url=')[1].split('&ct=ga')[0] if 'url=' in raw_link else raw_link
                 
-                create_github_issue(title, clean_link, brand)
+                create_github_issue(clean_title, clean_link, brand)
     except Exception as e:
         print(f"Error checking {brand}: {e}")
