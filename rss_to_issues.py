@@ -4,30 +4,32 @@ import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
 
+# Contains only the 20 links routed to the Cinema Guide
 FEEDS = {
-    "Hisense": "https://www.google.com/alerts/feeds/17291303775024850829/5960888969352555332",
-    "Sony": "https://www.google.com/alerts/feeds/17291303775024850829/10303995424947548603",
+    "Sony": "https://www.google.com/alerts/feeds/17291303775024850829/4282056408381308358",
+    "LG": "https://www.google.com/alerts/feeds/17291303775024850829/3966050588725823454",
+    "Samsung": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469530916",
     "TCL": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958105",
-    "Bose": "https://www.google.com/alerts/feeds/17291303775024850829/8335236053045408598",
-    "Denon": "https://www.google.com/alerts/feeds/17291303775024850829/10983863551238171227",
-    "Elac": "https://www.google.com/alerts/feeds/17291303775024850829/954187907946175596",
-    "JBL": "https://www.google.com/alerts/feeds/17291303775024850829/8770291637029842920",
-    "KEF": "https://www.google.com/alerts/feeds/17291303775024850829/16568459237653120296",
-    "Klipsch": "https://www.google.com/alerts/feeds/17291303775024850829/4876680161368429316",
-    "Marantz": "https://www.google.com/alerts/feeds/17291303775024850829/9277765981800493523",
-    "Nakamichi": "https://www.google.com/alerts/feeds/17291303775024850829/8770291637029839827",
-    "Onkyo": "https://www.google.com/alerts/feeds/17291303775024850829/3779327338424839596",
-    "Pioneer": "https://www.google.com/alerts/feeds/17291303775024850829/3779327338424837370",
-    "Polk Audio": "https://www.google.com/alerts/feeds/17291303775024850829/954187907946176341",
-    "LG": "https://www.google.com/alerts/feeds/17291303775024850829/5960888969352555350",
-    "Sennheiser": "https://www.google.com/alerts/feeds/17291303775024850829/4876680161368428601",
-    "Sonos": "https://www.google.com/alerts/feeds/17291303775024850829/8335236053045409735",
-    "SVS": "https://www.google.com/alerts/feeds/17291303775024850829/954187907946176256",
-    "Ultimea": "https://www.google.com/alerts/feeds/17291303775024850829/2380353577314263395",
-    "Yamaha": "https://www.google.com/alerts/feeds/17291303775024850829/13713156402188461531"
+    "Hisense": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966055531",
+    "Epson": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169957755",
+    "JVC": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958971",
+    "BenQ": "https://www.google.com/alerts/feeds/17291303775024850829/10430992398900947754",
+    "AWOL Vision": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531862",
+    "Formovie": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531273",
+    "Denon": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469532524",
+    "Marantz": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469532135",
+    "Yamaha": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531498",
+    "Onkyo": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966056501",
+    "Pioneer": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966056346",
+    "Klipsch": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169959681",
+    "KEF": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169957388",
+    "Bowers & Wilkins": "https://www.google.com/alerts/feeds/17291303775024850829/10430992398900948574",
+    "SVS": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958742",
+    "Bose": "https://www.google.com/alerts/feeds/17291303775024850829/4282056408381307615"
 }
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+# Targeting the Cinema repository
 REPO = "kalpdev2010-hub/dubai-cinema-guide"
 
 def create_github_issue(title, link, brand):
