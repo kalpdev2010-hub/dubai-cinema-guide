@@ -5,6 +5,7 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 import re
 import html
+import time # NEW: Imports the time module to slow the bot down
 
 # Contains only the 20 links routed to the Cinema Guide
 FEEDS = {
@@ -31,7 +32,6 @@ FEEDS = {
 }
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
-# Targeting the Cinema repository
 REPO = "kalpdev2010-hub/dubai-cinema-guide"
 
 def create_github_issue(title, link, brand):
@@ -58,17 +58,21 @@ def create_github_issue(title, link, brand):
     except Exception as e:
         print(f"❌ Error: {e}")
 
+# NEW: A robust browser disguise to prevent Google from blocking the connection
+req_headers = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+}
+
 for brand, rss_url in FEEDS.items():
     try:
-        req = urllib.request.Request(rss_url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = urllib.request.Request(rss_url, headers=req_headers)
         with urllib.request.urlopen(req) as response:
             tree = ET.parse(response)
             root = tree.getroot()
             
             for entry in root.findall('{http://www.w3.org/2005/Atom}entry')[:5]:
                 raw_title = entry.find('{http://www.w3.org/2005/Atom}title').text
-                
-                # NEW: This line removes the <b> tags and cleans the title perfectly
                 clean_title = html.unescape(re.sub(r'<[^>]+>', '', raw_title))
                 
                 raw_link = entry.find('{http://www.w3.org/2005/Atom}link').attrib['href']
@@ -77,3 +81,6 @@ for brand, rss_url in FEEDS.items():
                 create_github_issue(clean_title, clean_link, brand)
     except Exception as e:
         print(f"Error checking {brand}: {e}")
+    
+    # NEW: Forces the script to pause for 2 seconds before moving to the next brand
+    time.sleep(2)
