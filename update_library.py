@@ -17,8 +17,15 @@ print("Bot is waking up and connecting to TMDB...")
 today = datetime.date.today()
 last_month = today - datetime.timedelta(days=30)
 
-# Search for the most popular movies released in the last 30 days within your specific genres
-url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres=28,878,53,28,80,27,9648 &sort_by=popularity.desc&primary_release_date.gte={last_month}&primary_release_date.lte={today}"
+# 3. Ask TMDB for the top trending movies
+# Cleaned up genres (no duplicates, no spaces)
+GENRES = "28,878,53,80,27,9648"
+
+url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres={GENRES}&sort_by=popularity.desc&primary_release_date.gte={last_month}&primary_release_date.lte={today}"
+
+# THE CRITICAL CORRECTION: This removes any hidden spaces or control characters 
+# that cause the "InvalidURL" crash.
+url = url.replace(" ", "").strip()
 
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 response = urllib.request.urlopen(req)
