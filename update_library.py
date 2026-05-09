@@ -12,9 +12,12 @@ if not API_KEY:
 
 print("Bot is waking up and connecting to TMDB...")
 
-# 2. Ask TMDB for the top trending Action & Sci-Fi movies
-# Genres: 28 (Action), 878 (Sci-Fi)
-url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres=28,878&sort_by=popularity.desc"
+# Calculate today's date and the date 30 days ago to create a "New Release" window
+today = datetime.date.today()
+last_month = today - datetime.timedelta(days=30)
+
+# Search for the most popular movies released in the last 30 days within your specific genres
+url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres=28,878,53,28,80,27,9648 &sort_by=popularity.desc&primary_release_date.gte={last_month}&primary_release_date.lte={today}"
 
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 response = urllib.request.urlopen(req)
