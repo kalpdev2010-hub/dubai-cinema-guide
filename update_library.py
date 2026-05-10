@@ -15,7 +15,7 @@ print("Bot is waking up and connecting to TMDB...")
 
 # Calculate today's date and the date 30 days ago to create a "New Release" window
 today = datetime.date.today()
-last_month = today - datetime.timedelta(days=30)
+last_month = today - datetime.timedelta(days=90)
 
 # 3. Ask TMDB for the top trending movies
 # Cleaned up genres (no duplicates, no spaces)
@@ -40,7 +40,7 @@ existing_titles = [movie['title'].split(" (")[0].lower() for movie in movies]
 movies_added = 0
 
 # 4. Look at the top 3 trending movies right now
-for result in tmdb_data.get('results', [])[:3]:
+for result in tmdb_data.get('results', [])[:15]:
     title = result['title']
     year = result['release_date'][:4] if result.get('release_date') else "2026"
     full_title = f"{title} ({year})"
