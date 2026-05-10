@@ -13,39 +13,53 @@ if not API_KEY:
 
 print("Bot is waking up and connecting to TMDB...")
 
-# Calculate today's date and the date 30 days ago to create a "New Release" window
+# 2. Setup the "New Release" window
+# Looking back 90 days ensures we don't miss anything that hit Dubai slightly later
 today = datetime.date.today()
-last_month = today - datetime.timedelta(days=90)
+last_quarter = today - datetime.timedelta(days=90)
 
-# 3. Ask TMDB for the top trending movies
-# Cleaned up genres (no duplicates, no spaces)
-GENRES = "28,878,53,80,27,9648"
+# 3. Ask TMDB for movies
+# CRITICAL FIX: We use pipes (|) so the bot looks for Action OR Sci-Fi OR Thriller.
+# Using commas (,) was forcing the bot to find movies that were ALL genres at once.
+GENRES = "28|878|53|80|27|9648"
 
-url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres={GENRES}&sort_by=popularity.desc&primary_release_date.gte={last_month}&primary_release_date.lte={today}"
+# SORT FIX: We use 'primary_release_date.desc' to prioritize the newest releases
+url = f"https://api.themoviedb.org/3/discover/movie?api_key={API_KEY}&with_genres={GENRES}&sort_by=primary_release_date.desc&primary_release_date.gte={last_quarter}&primary_release_date.lte={today}"
 
-# THE CRITICAL CORRECTION: This removes any hidden spaces or control characters 
-# that cause the "InvalidURL" crash.
+# Safety check for spaces
 url = url.replace(" ", "").strip()
 
 req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-response = urllib.request.urlopen(req)
-tmdb_data = json.loads(response.read().decode())
+try:
+    response = urllib.request.urlopen(req)
+    tmdb_data = json.loads(response.read().decode())
+except Exception as e:
+    print(f"Error connecting to TMDB: {e}")
+    exit(1)
 
-# 3. Open your website's data vault
-with open('movies.json', 'r') as file:
-    movies = json.load(file)
+# 4. Open your website's data vault
+try:
+    with open('movies.json', 'r') as file:
+        movies = json.load(file)
+except FileNotFoundError:
+    print("Error: movies.json not found.")
+    exit(1)
 
 # Make a list of movies we already have so we don't duplicate
 existing_titles = [movie['title'].split(" (")[0].lower() for movie in movies]
 movies_added = 0
 
-# 4. Look at the top 3 trending movies right now
-for result in tmdb_data.get('results', [])[:15]:
+# 5. Scan the top 20 newest results
+# Increased to 20 to ensure we find new entries even if the very top ones are already listed
+for result in tmdb_data.get('results', [])[:20]:
     title = result['title']
-    year = result['release_date'][:4] if result.get('release_date') else "2026"
+    
+    # Handle potentially missing release dates safely
+    raw_date = result.get('release_date')
+    year = raw_date[:4] if raw_date else "2026"
     full_title = f"{title} ({year})"
 
-    # 5. If we don't have it, add it!
+    # 6. If we don't have it, add it!
     if title.lower() not in existing_titles:
         print(f"New release found: {full_title}!")
         
@@ -54,20 +68,21 @@ for result in tmdb_data.get('results', [])[:15]:
         amazon_link = f"https://www.amazon.ae/s?k={search_query}&tag=dubaicinema-21"
 
         new_movie = {
-            "genre": "Action", 
+            "genre": "New Release", 
             "badge": "NEW | 4K ATMOS / DTS:X",
             "title": full_title,
             "amazon_link": amazon_link
         }
         
-        movies.insert(0, new_movie) # Add to the very top
+        # Insert at the very top (index 0)
+        movies.insert(0, new_movie) 
         existing_titles.append(title.lower())
         movies_added += 1
 
-# 6. Save the vault if we found new movies
+# 7. Save the vault only if new movies were found
 if movies_added > 0:
     with open('movies.json', 'w') as file:
         json.dump(movies, file, indent=2)
     print(f"Success: {movies_added} new movies injected into the vault!")
 else:
-    print("Vault is already up to date. Going back to sleep.")
+    print("Vault is already up to date with the latest releases. Going back to sleep.")
