@@ -57,12 +57,13 @@ def create_github_issue(title, link, brand):
         print(f"❌ Error: {e}")
 
 for brand, rss_url in FEEDS.items():
-    print(f"📡 Verifying tunnel stream for: {brand}...")
+    print(f"📡 Requesting high-speed tunnel stream for: {brand}...")
     try:
-        proxy_url = f"https://api.allorigins.win/raw?url={urllib.parse.quote_plus(rss_url)}"
-        req = urllib.request.Request(proxy_url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
+        # Routing via the fast, unthrottled corsproxy network engine
+        proxy_url = f"https://corsproxy.io/?{urllib.parse.quote(rss_url)}"
+        req = urllib.request.Request(proxy_url, headers={'User-Agent': 'Mozilla/5.0'})
         
-        with urllib.request.urlopen(req, timeout=12) as response:
+        with urllib.request.urlopen(req, timeout=20) as response:
             xml_data = response.read().decode('utf-8', errors='ignore')
             root = ET.fromstring(xml_data)
             items = root.findall('.//item')
@@ -79,7 +80,6 @@ for brand, rss_url in FEEDS.items():
                     title_text = title_elem.text
                     link_text = link_elem.text
                     
-                    # CONTENT VALIDATION GATE: Drop fallback articles that don't contain the brand name
                     search_keyword = "polk" if brand.lower() == "polk audio" else brand.lower()
                     if search_keyword not in title_text.lower():
                         continue
@@ -87,7 +87,7 @@ for brand, rss_url in FEEDS.items():
                     create_github_issue(title_text, link_text, brand)
                     valid_count += 1
             
-            print(f"   Done. Synced {valid_count} specific updates for {brand}.")
+            print(f"   Done. Synced {valid_count} verified updates for {brand}.")
                     
     except Exception as e:
         print(f"⚠️ Skipped {brand}: {e}")
