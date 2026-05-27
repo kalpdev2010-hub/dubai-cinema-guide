@@ -9,7 +9,7 @@ import time
 MASTER_FEEDS = [
     "https://www.techradar.com/rss",
     "https://www.engadget.com/rss.xml",
-    "https://www.whathifi.com/rss/news"
+    "https://www.whathifi.com/rss"
 ]
 
 BRANDS = [
