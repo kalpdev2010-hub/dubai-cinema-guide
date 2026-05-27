@@ -3,32 +3,29 @@ import json
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
-import re
-import html
-import time # NEW: Imports the time module to slow the bot down
+import time
 
-# Contains only the 20 links routed to the Cinema Guide
 FEEDS = {
-    "Sony": "https://www.ecoustics.com/?s=Sony&feed=rss2",
-    "LG": "https://www.ecoustics.com/?s=LG&feed=rss2",
-    "Samsung": "https://www.ecoustics.com/?s=Samsung&feed=rss2",
-    "TCL": "https://www.ecoustics.com/?s=TCL&feed=rss2",
-    "Hisense": "https://www.ecoustics.com/?s=Hisense&feed=rss2",
-    "Epson": "https://www.ecoustics.com/?s=Epson&feed=rss2",
-    "JVC": "https://www.ecoustics.com/?s=JVC&feed=rss2",
-    "BenQ": "https://www.ecoustics.com/?s=BenQ&feed=rss2",
-    "AWOL Vision": "https://www.ecoustics.com/?s=AWOL+Vision&feed=rss2",
-    "Formovie": "https://www.ecoustics.com/?s=Formovie&feed=rss2",
-    "Denon": "https://www.ecoustics.com/?s=Denon&feed=rss2",
-    "Marantz": "https://www.ecoustics.com/?s=Marantz&feed=rss2",
-    "Yamaha": "https://www.ecoustics.com/?s=Yamaha&feed=rss2",
-    "Onkyo": "https://www.ecoustics.com/?s=Onkyo&feed=rss2",
-    "Pioneer": "https://www.ecoustics.com/?s=Pioneer&feed=rss2",
-    "Klipsch": "https://www.ecoustics.com/?s=Klipsch&feed=rss2",
-    "KEF": "https://www.ecoustics.com/?s=KEF&feed=rss2",
-    "Bowers & Wilkins": "https://www.ecoustics.com/?s=Bowers+%26+Wilkins&feed=rss2",
-    "SVS": "https://www.ecoustics.com/?s=SVS&feed=rss2",
-    "Bose": "https://www.ecoustics.com/?s=Bose&feed=rss2"
+    "Sony": "https://www.ecoustics.com/search/Sony/feed/rss2/",
+    "LG": "https://www.ecoustics.com/search/LG/feed/rss2/",
+    "Samsung": "https://www.ecoustics.com/search/Samsung/feed/rss2/",
+    "TCL": "https://www.ecoustics.com/search/TCL/feed/rss2/",
+    "Hisense": "https://www.ecoustics.com/search/Hisense/feed/rss2/",
+    "Epson": "https://www.ecoustics.com/search/Epson/feed/rss2/",
+    "JVC": "https://www.ecoustics.com/search/JVC/feed/rss2/",
+    "BenQ": "https://www.ecoustics.com/search/BenQ/feed/rss2/",
+    "AWOL Vision": "https://www.ecoustics.com/search/AWOL+Vision/feed/rss2/",
+    "Formovie": "https://www.ecoustics.com/search/Formovie/feed/rss2/",
+    "Denon": "https://www.ecoustics.com/search/Denon/feed/rss2/",
+    "Marantz": "https://www.ecoustics.com/search/Marantz/feed/rss2/",
+    "Yamaha": "https://www.ecoustics.com/search/Yamaha/feed/rss2/",
+    "Onkyo": "https://www.ecoustics.com/search/Onkyo/feed/rss2/",
+    "Pioneer": "https://www.ecoustics.com/search/Pioneer/feed/rss2/",
+    "Klipsch": "https://www.ecoustics.com/search/Klipsch/feed/rss2/",
+    "KEF": "https://www.ecoustics.com/search/KEF/feed/rss2/",
+    "Bowers & Wilkins": "https://www.ecoustics.com/search/Bowers+%26+Wilkins/feed/rss2/",
+    "SVS": "https://www.ecoustics.com/search/SVS/feed/rss2/",
+    "Bose": "https://www.ecoustics.com/search/Bose/feed/rss2/"
 }
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -58,11 +55,11 @@ def create_github_issue(title, link, brand):
     except Exception as e:
         print(f"❌ Error: {e}")
 
-# Process feeds via the API broker to bypass data center blocks
 for brand, rss_url in FEEDS.items():
-    print(f"📡 Requesting broker connection for: {brand}...")
+    print(f"📡 Connecting to broker channel for: {brand}...")
     try:
-        broker_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote_plus(rss_url)}"
+        # Added a timestamp token to completely eliminate broker cache reuse
+        broker_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote_plus(rss_url)}&_cb={int(time.time())}"
         
         req = urllib.request.Request(broker_url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as response:
@@ -70,7 +67,7 @@ for brand, rss_url in FEEDS.items():
             
             if data.get('status') == 'ok':
                 items = data.get('items', [])
-                print(f"   Success! Broker returned {len(items)} items for {brand}.")
+                print(f"   Success! Received {len(items)} items for {brand}.")
                 
                 for item in items[:3]:
                     title = item.get('title')
@@ -78,8 +75,9 @@ for brand, rss_url in FEEDS.items():
                     if title and link:
                         create_github_issue(title, link, brand)
             else:
-                print(f"   ⚠️ Broker could not parse feed for {brand}")
+                print(f"   ⚠️ Broker feed translation skipped for {brand}")
                     
     except Exception as e:
-        print(f"❌ Core link exception for {brand}: {e}")
-
+        print(f"❌ Connection error for {brand}: {e}")
+    time.sleep(1)
+    
