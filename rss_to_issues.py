@@ -9,26 +9,26 @@ import time # NEW: Imports the time module to slow the bot down
 
 # Contains only the 20 links routed to the Cinema Guide
 FEEDS = {
-    "Sony": "https://www.google.com/alerts/feeds/17291303775024850829/4282056408381308358",
-    "LG": "https://www.google.com/alerts/feeds/17291303775024850829/3966050588725823454",
-    "Samsung": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469530916",
-    "TCL": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958105",
-    "Hisense": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966055531",
-    "Epson": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169957755",
-    "JVC": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958971",
-    "BenQ": "https://www.google.com/alerts/feeds/17291303775024850829/10430992398900947754",
-    "AWOL Vision": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531862",
-    "Formovie": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531273",
-    "Denon": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469532524",
-    "Marantz": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469532135",
-    "Yamaha": "https://www.google.com/alerts/feeds/17291303775024850829/15000369253469531498",
-    "Onkyo": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966056501",
-    "Pioneer": "https://www.google.com/alerts/feeds/17291303775024850829/8594716954966056346",
-    "Klipsch": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169959681",
-    "KEF": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169957388",
-    "Bowers & Wilkins": "https://www.google.com/alerts/feeds/17291303775024850829/10430992398900948574",
-    "SVS": "https://www.google.com/alerts/feeds/17291303775024850829/3220531133169958742",
-    "Bose": "https://www.google.com/alerts/feeds/17291303775024850829/4282056408381307615"
+    "Sony": "https://www.ecoustics.com/?s=Sony&feed=rss2",
+    "LG": "https://www.ecoustics.com/?s=LG&feed=rss2",
+    "Samsung": "https://www.ecoustics.com/?s=Samsung&feed=rss2",
+    "TCL": "https://www.ecoustics.com/?s=TCL&feed=rss2",
+    "Hisense": "https://www.ecoustics.com/?s=Hisense&feed=rss2",
+    "Epson": "https://www.ecoustics.com/?s=Epson&feed=rss2",
+    "JVC": "https://www.ecoustics.com/?s=JVC&feed=rss2",
+    "BenQ": "https://www.ecoustics.com/?s=BenQ&feed=rss2",
+    "AWOL Vision": "https://www.ecoustics.com/?s=AWOL+Vision&feed=rss2",
+    "Formovie": "https://www.ecoustics.com/?s=Formovie&feed=rss2",
+    "Denon": "https://www.ecoustics.com/?s=Denon&feed=rss2",
+    "Marantz": "https://www.ecoustics.com/?s=Marantz&feed=rss2",
+    "Yamaha": "https://www.ecoustics.com/?s=Yamaha&feed=rss2",
+    "Onkyo": "https://www.ecoustics.com/?s=Onkyo&feed=rss2",
+    "Pioneer": "https://www.ecoustics.com/?s=Pioneer&feed=rss2",
+    "Klipsch": "https://www.ecoustics.com/?s=Klipsch&feed=rss2",
+    "KEF": "https://www.ecoustics.com/?s=KEF&feed=rss2",
+    "Bowers & Wilkins": "https://www.ecoustics.com/?s=Bowers+%26+Wilkins&feed=rss2",
+    "SVS": "https://www.ecoustics.com/?s=SVS&feed=rss2",
+    "Bose": "https://www.ecoustics.com/?s=Bose&feed=rss2"
 }
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -58,29 +58,28 @@ def create_github_issue(title, link, brand):
     except Exception as e:
         print(f"❌ Error: {e}")
 
-# NEW: A robust browser disguise to prevent Google from blocking the connection
-req_headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
-}
-
+# Process feeds via the API broker to bypass data center blocks
 for brand, rss_url in FEEDS.items():
+    print(f"📡 Requesting broker connection for: {brand}...")
     try:
-        req = urllib.request.Request(rss_url, headers=req_headers)
-        with urllib.request.urlopen(req) as response:
-            tree = ET.parse(response)
-            root = tree.getroot()
+        broker_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote_plus(rss_url)}"
+        
+        req = urllib.request.Request(broker_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=15) as response:
+            data = json.loads(response.read().decode('utf-8'))
             
-            for entry in root.findall('{http://www.w3.org/2005/Atom}entry')[:5]:
-                raw_title = entry.find('{http://www.w3.org/2005/Atom}title').text
-                clean_title = html.unescape(re.sub(r'<[^>]+>', '', raw_title))
+            if data.get('status') == 'ok':
+                items = data.get('items', [])
+                print(f"   Success! Broker returned {len(items)} items for {brand}.")
                 
-                raw_link = entry.find('{http://www.w3.org/2005/Atom}link').attrib['href']
-                clean_link = raw_link.split('url=')[1].split('&ct=ga')[0] if 'url=' in raw_link else raw_link
-                
-                create_github_issue(clean_title, clean_link, brand)
+                for item in items[:3]:
+                    title = item.get('title')
+                    link = item.get('link')
+                    if title and link:
+                        create_github_issue(title, link, brand)
+            else:
+                print(f"   ⚠️ Broker could not parse feed for {brand}")
+                    
     except Exception as e:
-        print(f"Error checking {brand}: {e}")
-    
-    # NEW: Forces the script to pause for 2 seconds before moving to the next brand
-    time.sleep(2)
+        print(f"❌ Core link exception for {brand}: {e}")
+
