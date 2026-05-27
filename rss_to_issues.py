@@ -5,27 +5,29 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 import time
 
+# Strictly synchronized with the 21 brand buttons on your website frontend
 FEEDS = {
-    "Sony": "https://www.ecoustics.com/search/Sony/feed/rss2/",
-    "LG": "https://www.ecoustics.com/search/LG/feed/rss2/",
-    "Samsung": "https://www.ecoustics.com/search/Samsung/feed/rss2/",
-    "TCL": "https://www.ecoustics.com/search/TCL/feed/rss2/",
+    "Bose": "https://www.ecoustics.com/search/Bose/feed/rss2/",
+    "Denon": "https://www.ecoustics.com/search/Denon+Receiver/feed/rss2/",
+    "Elac": "https://www.ecoustics.com/search/Elac/feed/rss2/",
     "Hisense": "https://www.ecoustics.com/search/Hisense/feed/rss2/",
-    "Epson": "https://www.ecoustics.com/search/Epson/feed/rss2/",
-    "JVC": "https://www.ecoustics.com/search/JVC/feed/rss2/",
-    "BenQ": "https://www.ecoustics.com/search/BenQ/feed/rss2/",
-    "AWOL Vision": "https://www.ecoustics.com/search/AWOL+Vision/feed/rss2/",
-    "Formovie": "https://www.ecoustics.com/search/Formovie/feed/rss2/",
-    "Denon": "https://www.ecoustics.com/search/Denon/feed/rss2/",
-    "Marantz": "https://www.ecoustics.com/search/Marantz/feed/rss2/",
-    "Yamaha": "https://www.ecoustics.com/search/Yamaha/feed/rss2/",
-    "Onkyo": "https://www.ecoustics.com/search/Onkyo/feed/rss2/",
-    "Pioneer": "https://www.ecoustics.com/search/Pioneer/feed/rss2/",
-    "Klipsch": "https://www.ecoustics.com/search/Klipsch/feed/rss2/",
+    "JBL": "https://www.ecoustics.com/search/JBL/feed/rss2/",
     "KEF": "https://www.ecoustics.com/search/KEF/feed/rss2/",
-    "Bowers & Wilkins": "https://www.ecoustics.com/search/Bowers+%26+Wilkins/feed/rss2/",
+    "Klipsch": "https://www.ecoustics.com/search/Klipsch/feed/rss2/",
+    "LG": "https://www.ecoustics.com/search/LG/feed/rss2/",
+    "Marantz": "https://www.ecoustics.com/search/Marantz/feed/rss2/",
+    "Nakamichi": "https://www.ecoustics.com/search/Nakamichi/feed/rss2/",
+    "Onkyo": "https://www.ecoustics.com/search/Onkyo/feed/rss2/",
+    "Pioneer": "https://www.ecoustics.com/search/Pioneer+AVR/feed/rss2/",
+    "Polk Audio": "https://www.ecoustics.com/search/Polk+Audio/feed/rss2/",
+    "Samsung": "https://www.ecoustics.com/search/Samsung/feed/rss2/",
+    "Sennheiser": "https://www.ecoustics.com/search/Sennheiser/feed/rss2/",
+    "Sonos": "https://www.ecoustics.com/search/Sonos/feed/rss2/",
+    "Sony": "https://www.ecoustics.com/search/Sony+TV/feed/rss2/",
     "SVS": "https://www.ecoustics.com/search/SVS/feed/rss2/",
-    "Bose": "https://www.ecoustics.com/search/Bose/feed/rss2/"
+    "TCL": "https://www.ecoustics.com/search/TCL/feed/rss2/",
+    "Ultimea": "https://www.ecoustics.com/search/Ultimea/feed/rss2/",
+    "Yamaha": "https://www.ecoustics.com/search/Yamaha+Receiver/feed/rss2/"
 }
 
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
@@ -58,7 +60,6 @@ def create_github_issue(title, link, brand):
 for brand, rss_url in FEEDS.items():
     print(f"📡 Connecting to broker channel for: {brand}...")
     try:
-        # Added a timestamp token to completely eliminate broker cache reuse
         broker_url = f"https://api.rss2json.com/v1/api.json?rss_url={urllib.parse.quote_plus(rss_url)}&_cb={int(time.time())}"
         
         req = urllib.request.Request(broker_url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -79,5 +80,7 @@ for brand, rss_url in FEEDS.items():
                     
     except Exception as e:
         print(f"❌ Connection error for {brand}: {e}")
-    time.sleep(1)
+        
+    # Crucial 4-second delay pacing to guarantee we never trigger a 429 rate limit
+    time.sleep(4)
     
