@@ -58,10 +58,10 @@
         "amazon_link": "https://www.amazon.ae/s?k=Klipsch+Flexus+CORE+200&tag=dubaicinema-21"
       },
       {
-        "badge": "FLEXUS | Dirac Live 5.1.2",
-        "model": "Klipsch Flexus CORE 300",
-        "description": "The flagship of the Flexus line. The world's first soundbar featuring built-in Dirac Live room correction.",
-        "amazon_link": "https://www.amazon.ae/s?k=Klipsch+Flexus+CORE+300&tag=dubaicinema-21"
+        "badge": "MID-RANGE | Spatial Sound",
+        "model": "Sony Bravia Theater Bar 8",
+        "description": "An excellent multi-directional mid-range soundbar featuring sophisticated acoustic mapping physics for precise home surround.",
+        "amazon_link": "https://www.amazon.ae/s?k=Sony%20Bravia%20Theater%20Bar%208&tag=dubaicinema-21"
       }
     ]
   },
@@ -70,10 +70,10 @@
     "category_title": "Soundbars: Premium Standalone",
     "items": [
       {
-        "badge": "FLAGSHIP | Virtual Atmos",
-        "model": "Sonos Arc",
-        "description": "The sleekest, most premium standalone bar on the market. Flawless acoustic design and app control.",
-        "amazon_link": "https://www.amazon.ae/s?k=Sonos%20Arc&tag=dubaicinema-21"
+        "badge": "FLAGSHIP | Sound Motion",
+        "model": "Sonos Arc Ultra",
+        "description": "The absolute benchmark standalone speaker. Integrates revolutionary revolutionary driver arrays for premium spatial tracking and profound bass depth without structural separates.",
+        "amazon_link": "https://www.amazon.ae/s?k=Sonos%20Arc%20Ultra&tag=dubaicinema-21"
       },
       {
         "badge": "COMPACT | Virtual Atmos",
@@ -97,7 +97,7 @@
         "badge": "COMING SOON | 2026 MODEL",
         "model": "Samsung HW-Q990H",
         "description": "The 2026 evolution of the world's #1 soundbar. Adds 'Sound Elevation' AI to place dialogue perfectly at screen level.",
-        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-Q990D&tag=dubaicinema-21"
+        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20HW-Q990H&tag=dubaicinema-21"
       },
       {
         "badge": "INNOVATIVE | Detachable Rears",
@@ -130,10 +130,10 @@
         "amazon_link": "https://www.amazon.ae/s?k=LG+QNED85&tag=dubaicinema-21"
       },
       {
-        "badge": "BUDGET | High Brightness",
-        "model": "TCL C755",
-        "description": "Unbeatable brightness for the price. The ultimate living room TV for daytime viewing in the UAE.",
-        "amazon_link": "https://www.amazon.ae/s?k=TCL%20C755&tag=dubaicinema-21"
+        "badge": "BUDGET CHAMP | 2026",
+        "model": "TCL C765",
+        "description": "The updated value powerhouse for home cinema configurations. Drastically scales local dimming zones while lowering screen bloom metrics.",
+        "amazon_link": "https://www.amazon.ae/s?k=TCL%20C765&tag=dubaicinema-21"
       },
       {
         "badge": "PREMIUM | Contrast",
@@ -143,9 +143,9 @@
       },
       {
         "badge": "BRIGHT ROOM | Mini-LED",
-        "model": "Samsung QN90D",
-        "description": "The undisputed bright-room king. Fights daytime glare without sacrificing deep blacks or contrast.",
-        "amazon_link": "https://www.amazon.ae/s?k=Samsung+QN90D+Mini+LED&tag=dubaicinema-21"
+        "model": "Samsung QN90F",
+        "description": "The generation-current bright room standard. Combines premium matrix anti-reflection arrays with highly intuitive AI color processing mechanics.",
+        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20QN90F&tag=dubaicinema-21"
       },
       {
         "badge": "MASTER DRIVE | Flagship",
@@ -160,16 +160,16 @@
     "category_title": "Displays: OLED & QD-OLED",
     "items": [
       {
-        "badge": "BUDGET OLED | Perfect Blacks",
-        "model": "LG B4 OLED",
-        "description": "The most accessible way to get infinite contrast and perfect black levels for a dark home cinema.",
-        "amazon_link": "https://www.amazon.ae/s?k=LG%20B4%20OLED&tag=dubaicinema-21"
+        "badge": "ACCESSIBLE | Perfect Black",
+        "model": "LG B6 OLED",
+        "description": "The contemporary entry baseline into authentic infinite contrast execution, providing immaculate dark room responses.",
+        "amazon_link": "https://www.amazon.ae/s?k=LG%20B6%20OLED&tag=dubaicinema-21"
       },
       {
         "badge": "COMING SOON | 2026 MODEL",
         "model": "LG C6 OLED",
         "description": "The 2026 standard. Featuring the new 2nd Gen Tandem WOLED panel and a blistering 165Hz refresh rate for gaming.",
-        "amazon_link": "https://www.amazon.ae/s?k=LG%20C4%20OLED&tag=dubaicinema-21"
+        "amazon_link": "https://www.amazon.ae/s?k=LG%20C6%20OLED&tag=dubaicinema-21"
       },
       {
         "badge": "2025 UPGRADE | OLED",
@@ -178,16 +178,16 @@
         "amazon_link": "https://www.amazon.ae/s?k=LG+C5+OLED&tag=dubaicinema-21"
       },
       {
-        "badge": "QD-OLED | Vibrant",
-        "model": "Samsung S90D",
-        "description": "Massive brightness for an OLED, powered by Quantum Dots for vibrant colors and HDR punch.",
-        "amazon_link": "https://www.amazon.ae/s?k=Samsung+S90D+OLED&tag=dubaicinema-21"
+        "badge": "QD-OLED | Vibrant Pro",
+        "model": "Samsung S90F",
+        "description": "Exceptional brightness benchmarks utilizing self-emissive quantum dots for deep color volume saturation.",
+        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20S90F%20OLED&tag=dubaicinema-21"
       },
       {
-        "badge": "QD-OLED | Anti-Glare",
-        "model": "Samsung S95D",
-        "description": "A massive punch of color with a revolutionary matte screen that destroys living room reflections.",
-        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20S95D&tag=dubaicinema-21"
+        "badge": "QD-OLED | Matte Flagship",
+        "model": "Samsung S95F",
+        "description": "Stunning luminance performance backed by highly advanced reflection negation filters that eliminate glare constraints completely.",
+        "amazon_link": "https://www.amazon.ae/s?k=Samsung%20S95F&tag=dubaicinema-21"
       },
       {
         "badge": "MASTER SERIES | QD-OLED",
@@ -202,10 +202,10 @@
     "category_title": "AV Receivers: Entry & Mid-Range",
     "items": [
       {
-        "badge": "BUDGET | 7.2 Channel",
-        "model": "Sony STR-DH790",
-        "description": "The absolute most cost-effective way to power a true 5.1.2 Dolby Atmos physical speaker system.",
-        "amazon_link": "https://www.amazon.ae/s?k=Sony%20STR-DH790&tag=dubaicinema-21"
+        "badge": "BUDGET ATMOS | 2026",
+        "model": "Denon AVR-S980H",
+        "description": "The fundamental 2026 entry point to full-bandwidth 4K/120Hz processing, unlocking physical 5.1.2 soundscapes cleanly.",
+        "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVR-S980H&tag=dubaicinema-21"
       },
       {
         "badge": "STANDARD | 7.2 Channel",
@@ -214,16 +214,16 @@
         "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVR-X1800H&tag=dubaicinema-21"
       },
       {
-        "badge": "MID-RANGE | 7.2 CH",
-        "model": "Denon AVR-X2800H",
-        "description": "The reliable workhorse for 90% of living rooms. Flawless 8K video support and legendary processing.",
-        "amazon_link": "https://www.amazon.ae/s?k=Denon+AVR-X2800H&tag=dubaicinema-21"
+        "badge": "WORKHORSE | 7.2 CH",
+        "model": "Denon AVR-X2900H",
+        "description": "The definitive updated multi-source driver for standard living environments, running high-performance DACs and clean analog tracking.",
+        "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVR-X2900H&tag=dubaicinema-21"
       },
       {
-        "badge": "THE KING | 9.4 Channel",
-        "model": "Denon AVC-X3800H",
-        "description": "The undisputed mid-range champion. Processes 11 channels and supports Dirac Live room correction.",
-        "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVC-X3800H&tag=dubaicinema-21"
+        "badge": "THE MID-RANGE KING",
+        "model": "Denon AVR-X3900H",
+        "description": "The ultimate multi-channel controller supporting discrete quad subwoofer routing configurations and full Dirac Live space analytics integration.",
+        "amazon_link": "https://www.amazon.ae/s?k=Denon%20AVR-X3900H&tag=dubaicinema-21"
       },
       {
         "badge": "DIRAC LIVE | 9.2 CH",
@@ -268,10 +268,10 @@
     "category_title": "Speakers: High-Value & Premium",
     "items": [
       {
-        "badge": "BUDGET | Bookshelf",
-        "model": "Sony SS-CS5",
-        "description": "Legendary entry-level speakers. They cost almost nothing but deliver shocking clarity for the price.",
-        "amazon_link": "https://www.amazon.ae/s?k=Sony%20SS-CS5&tag=dubaicinema-21"
+        "badge": "HI-RES | Dynamic",
+        "model": "Polk Signature Elite ES20",
+        "description": "Outstanding structural acoustics packing signature power port technology for striking low-end transients and transparent dialogue staging.",
+        "amazon_link": "https://www.amazon.ae/s?k=Polk%20Signature%20Elite%20ES20&tag=dubaicinema-21"
       },
       {
         "badge": "HOME THEATER | Tower",
