@@ -72,7 +72,7 @@
       {
         "badge": "FLAGSHIP | Sound Motion",
         "model": "Sonos Arc Ultra",
-        "description": "The absolute benchmark standalone speaker. Integrates revolutionary revolutionary driver arrays for premium spatial tracking and profound bass depth without structural separates.",
+        "description": "The absolute benchmark standalone speaker. Integrates revolutionary driver arrays for premium spatial tracking and profound bass depth without structural separates.",
         "amazon_link": "https://www.amazon.ae/s?k=Sonos%20Arc%20Ultra&tag=dubaicinema-21"
       },
       {
@@ -368,6 +368,24 @@
         "model": "KEF LS50 Meta",
         "description": "The legendary reference bookshelf. Metamaterial Absorption Technology eliminates unwanted sound.",
         "amazon_link": "https://www.amazon.ae/s?k=KEF+LS50+Meta&tag=dubaicinema-21"
+      },
+      {
+        "badge": "POWERED | Horn Loaded",
+        "model": "Klipsch The Sevens II",
+        "description": "Premium 200W active bookshelf pair with co-engineered Onkyo circuitry, legendary Tractrix horns, and an integrated high-res DAC layout.",
+        "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20The%20Sevens%20II&tag=dubaicinema-21"
+      },
+      {
+        "badge": "POWERED | 8-Inch Flagship",
+        "model": "Klipsch The Nines II",
+        "description": "High-output active audio monitors engineered with a dominant 8-inch woofer configuration, delivering pure dynamic transient punch without external receivers.",
+        "amazon_link": "https://www.amazon.ae/s?k=Klipsch%20The%20Nines%20II&tag=dubaicinema-21"
+      },
+      {
+        "badge": "SMART ACTIVE | 200W",
+        "model": "SVS Prime Wireless Pro",
+        "description": "Reference bi-amplified smart speaker pair featuring seamless 24-bit/192kHz Wi-Fi streaming, HDMI eARC routing parameters, and a sleek front OLED interface display.",
+        "amazon_link": "https://www.amazon.ae/s?k=SVS%20Prime%20Wireless%20Pro&tag=dubaicinema-21"
       }
     ]
   },
