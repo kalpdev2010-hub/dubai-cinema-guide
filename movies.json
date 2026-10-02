@@ -1,5 +1,41 @@
 [
   {
+    "genre": "Thriller",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "Primetime (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=Primetime%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
+    "genre": "Horror",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "It Ends (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=It%20Ends%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
+    "genre": "Drama",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "The Uprising (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=The%20Uprising%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
+    "genre": "Comedy",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "Digger (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=Digger%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
+    "genre": "Thriller",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "UNABOMBER (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=UNABOMBER%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
+    "genre": "Action",
+    "badge": "NEW | 4K ATMOS / DTS:X",
+    "title": "Runner (2026)",
+    "amazon_link": "https://www.amazon.ae/s?k=Runner%20%282026%29%204K%20Blu-ray&tag=dubaicinema-21"
+  },
+  {
     "genre": "Adventure",
     "badge": "NEW | 4K ATMOS / DTS:X",
     "title": "Heart of the Beast (2026)",
